@@ -1,4 +1,4 @@
-# $Id: policy-route,v 1.14 2008/06/18 21:35:39 miles Exp $
+# $Id$
 #
 # $Log: policy-route,v $
 # Revision 1.14  2008/06/18 21:35:39  miles
@@ -59,7 +59,7 @@ route-map gnat permit 2001
 
 
 no access-list 2001
-access-list 2001 remark # $Id: policy-route,v 1.14 2008/06/18 21:35:39 miles Exp $
+access-list 2001 remark # $Id$
 access-list 2001 remark # What matches this ACL gets NATed. Default is NO NAT.
 access-list 2001 remark # -------------------------------------------------------
 access-list 2001 remark #  Use a 'deny' to not NAT from certain private IP
