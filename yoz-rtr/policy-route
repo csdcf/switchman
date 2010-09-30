@@ -60,39 +60,40 @@ route-map gnat permit 2001
 
 no access-list 2001
 access-list 2001 remark # $Id: policy-route,v 1.14 2008/06/18 21:35:39 miles Exp $
-access-list 2001 remark # What matches this ACL gets NATed.
-access-list 2001 remark # SOURCE ADDRESS MATCHING ######################
-access-list 2001 remark # From any public stanford address.
-access-list 2001 deny ip 171.64.0.0 0.3.255.255 any
-access-list 2001 remark # from Nick McKeown's virtual router class
+access-list 2001 remark # What matches this ACL gets NATed. Default is NO NAT.
+access-list 2001 remark # -------------------------------------------------------
+access-list 2001 remark #  Use a 'deny' to not NAT from certain private IP
+access-list 2001 remark # -------------------------------------------------------
+access-list 2001 remark # Don't nat from Nick McKeown's virtual router class
 access-list 2001 deny ip 192.168.128.0 0.0.7.255 any
-access-list 2001 remark # Wireless
-access-list 2001 deny ip 10.32.0.0 0.1.255.255 any
-access-list 2001 deny ip 10.31.0.0 0.1.255.255 any
-access-list 2001 deny ip 10.15.0.0 0.0.255.255 any
-access-list 2001 remark # from host self-registration net(s)
+access-list 2001 remark # Don't nat from host self-registration net(s)
 access-list 2001 deny ip 172.17.0.0 0.0.255.255 any
-access-list 2001 remark # DESTINATION ADDRESS MATCHING ##################
-access-list 2001 remark # NAT for highwire
-access-list 2001 remark # reassigned permit ip any 171.64.249.0 0.0.0.255
+access-list 2001 remark # -------------------------------------------------------
+access-list 2001 remark #  Use a 'permit' to NAT to dest on campus
+access-list 2001 remark # -------------------------------------------------------
+access-list 2001 remark # NAT to highwire
 access-list 2001 permit ip any 171.66.120.0 0.0.7.255
-access-list 2001 permit ip any 171.67.113.97 0.0.15.255
-access-list 2001 remark # NAT for Mazieres-net
+access-list 2001 permit ip any 171.67.112.0 0.0.15.255
+access-list 2001 remark # NAT to Mazieres-net
 access-list 2001 permit ip any 171.66.3.0 0.0.0.255
-access-list 2001 remark # NAT for exp nets to campus - 64-79
-access-list 2001 deny ip 10.79.0.0 0.0.255.255 171.64.64.0 0.0.15.255
-access-list 2001 deny ip 10.79.0.0 0.0.255.255 172.24.64.0 0.0.15.255
-access-list 2001 deny ip 10.79.0.0 0.0.255.255 171.67.64.0 0.0.15.255
-access-list 2001 deny ip 10.79.0.0 0.0.255.255 172.27.64.0 0.0.15.255
-access-list 2001 permit ip 10.79.0.0 0.0.255.255 any
-access-list 2001 remark # Don't NAT anything going to stanford net
-access-list 2001 deny ip any 172.16.0.0 0.15.255.255
+access-list 2001 remark # -------------------------------------------------------
+access-list 2001 remark #  Use a 'deny' to not NAT to dest
+access-list 2001 remark # -------------------------------------------------------
+access-list 2001 remark # Don't NAT to campus (mostly) 171.64-171.67
 access-list 2001 deny ip any 171.64.0.0 0.3.255.255
 access-list 2001 deny ip any 128.12.0.0 0.0.255.255
-access-list 2001 deny ip any 192.168.0.0 0.0.255.255
-access-list 2001 deny ip any 10.79.0.0 0.0.255.255
-access-list 2001 deny ip any 10.32.0.0 0.1.255.255
-! # access-list 2001 deny ip any 192.168.136.0 0.0.1.255
-access-list 2001 permit ip any any
+access-list 2001 remark # Don't NAT to private subnets
+access-list 2001 deny ip any 10.0.0.0 0.255.255.255 any
+access-list 2001 deny ip any 172.16.0.0 0.15.255.255 any
+access-list 2001 deny ip any 192.168.0.0 0.0.255.255 any
+access-list 2001 remark # -------------------------------------------------------
+access-list 2001 remark # NAT from all private subnets, except what's denied above.
+access-list 2001 remark # -------------------------------------------------------
+access-list 2001 permit ip 10.0.0.0 0.255.255.255 any
+access-list 2001 permit ip 172.16.0.0 0.15.255.255 any
+access-list 2001 permit ip 192.168.0.0 0.0.255.255 any
+access-list 2001 remark # The end -- don't match anything else
+access-list 2001 deny ip any any
+
 
 
