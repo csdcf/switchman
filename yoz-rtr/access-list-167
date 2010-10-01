@@ -1,0 +1,51 @@
+!access-list 167 remark ###################################################
+!access-list 167 remark CSDCF: ACL for CSDCF net, vlan 67 (sunburn misc)
+!access-list 167 remark ###################################################
+!access-list 167 permit tcp any any established
+!access-list 167 remark CSDCF: private to public and back
+!access-list 167 permit ip 171.64.67.0 0.0.0.255 172.24.67.0 0.0.0.255
+!access-list 167 permit ip 172.24.67.0 0.0.0.255 171.64.67.0 0.0.0.255
+!access-list 167 remark CSDCF: CS server net
+!access-list 167 permit ip 172.24.64.0 0.0.0.255 171.64.67.0 0.0.0.255
+!access-list 167 permit ip 171.64.64.0 0.0.0.255 171.64.67.0 0.0.0.255
+!access-list 167 remark CSDCF: Kerberos
+!access-list 167 permit tcp any any range 543 544
+!access-list 167 permit tcp any any eq 2105
+!access-list 167 remark CSDCF: AFS
+!access-list 167 permit udp any any range 7000 7010
+!access-list 167 remark CSDCF: DNS
+!access-list 167 permit tcp any eq 53 any
+!access-list 167 permit udp any eq 53 any
+!access-list 167 remark CSDCF: Sunburn
+!access-list 167 permit tcp any host 171.64.67.178 eq smtp
+!access-list 167 permit tcp any host 171.64.67.178 eq pop3
+!access-list 167 permit tcp any host 171.64.67.178 eq pop2
+!access-list 167 permit tcp any host 171.64.67.178 eq 22
+!access-list 167 permit tcp any host 171.64.67.178 eq 143
+!access-list 167 permit tcp any host 171.64.67.178 eq 993
+!access-list 167 permit tcp any host 171.64.67.178 eq 995
+!access-list 167 permit tcp any host 171.64.67.178 eq 80
+!access-list 167 permit tcp any host 171.64.67.178 eq 443
+!access-list 167 remark CSDCF: Sunburn meeting maker
+!access-list 167 permit tcp any host 171.64.67.178 eq 417
+!access-list 167 permit tcp any host 171.64.67.178 eq 2360
+!access-list 167 permit udp any host 171.64.67.178 eq 417
+!access-list 167 permit udp any host 171.64.67.178 gt 40000
+!access-list 167 remark CSDCF: Sunburn medit, pedit, lookup
+!access-list 167 permit tcp any host 171.64.67.178 range 631 637
+!access-list 167 permit tcp any host 171.64.67.178 eq 6004
+!access-list 167 permit tcp any host 171.64.67.178 eq 5558
+!access-list 167 remark CSDCF: Sunburn sybase from GIN people
+!access-list 167 permit tcp host 171.64.71.107 host 171.64.67.178 eq 4000
+!access-list 167 permit tcp host 171.64.71.47 host 171.64.67.178 eq 4000
+!access-list 167 permit tcp host 171.64.71.83 host 171.64.67.178 eq 4000
+!access-list 167 remark CSDCF: Sunburn sybase from Forum
+!access-list 167 permit tcp host 171.64.76.194 host 171.64.67.178 eq 4000
+!access-list 167 remark CSDCF: Sunburn to khwarizm, khwarizm1
+!access-list 167 permit ip host 171.64.78.222 host 171.64.67.178
+!access-list 167 permit ip host 171.64.78.223 host 171.64.67.178
+!access-list 167 remark CSDCF: Sunburn, deny the rest
+!access-list 167 deny   tcp any host 171.64.67.178
+!access-list 167 deny   udp any host 171.64.67.178
+!access-list 167 remark CSDCF:
+!access-list 167 permit ip any any

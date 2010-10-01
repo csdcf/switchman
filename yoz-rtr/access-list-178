@@ -1,0 +1,121 @@
+# This file needs to be a complete, valid terminal session post-enable
+conf t
+no access-list 178
+access-list 178 remark $Id: access-list-178,v 1.18 2010/03/26 22:15:17 miles Exp $
+access-list 178 remark CSDCF: ACL for Theory Lab, vlan 78
+access-list 178 remark ###################################################
+access-list 178 permit tcp any any established
+access-list 178 remark CSDCF: private to public and back
+access-list 178 permit ip 171.64.78.0 0.0.0.255 172.24.78.0 0.0.0.255
+access-list 178 permit ip 172.24.78.0 0.0.0.255 171.64.78.0 0.0.0.255
+access-list 178 remark CSDCF: Allow in CS nets
+access-list 178 permit ip 171.64.64.0 0.0.0.255 any
+access-list 178 permit ip 172.24.64.0 0.0.0.255 any
+access-list 178 remark CSDCF: Permits for all hosts on theory net
+access-list 178 permit tcp any any eq www
+access-list 178 permit tcp any any eq 443
+access-list 178 permit tcp any any eq 3389
+access-list 178 permit udp any any range 7000 7010
+access-list 178 remark CSDCF: Wide open hosts
+access-list 178 permit ip any host 171.64.78.10 
+access-list 178 permit ip any host 171.64.78.25
+access-list 178 permit ip any host 171.64.78.177
+access-list 178 remark CSDCF: printing from Gates admin net
+access-list 178 permit tcp 172.27.64.0 0.0.0.255 any eq 515
+access-list 178 permit tcp 172.27.64.0 0.0.0.255 any eq 631
+access-list 178 permit tcp 172.27.64.0 0.0.0.255 any eq 9100
+!access-list 178 permit tcp host 171.64.67.150 any
+access-list 178 remark CSD-CF:
+access-list 178 permit tcp 171.64.70.0 0.0.0.255 host 171.64.78.52 gt 500
+!access-list 178 permit tcp any host 171.64.78.10 eq 22
+!access-list 178 permit tcp any host 171.64.78.10 eq smtp
+!access-list 178 permit tcp any host 171.64.78.10 eq pop3
+!access-list 178 permit tcp any host 171.64.78.10 eq 143
+!access-list 178 permit tcp any host 171.64.78.10 eq 220
+!access-list 178 permit tcp any host 171.64.78.10 eq 993
+!access-list 178 permit tcp any host 171.64.78.10 eq 995
+!access-list 178 permit tcp any host 171.64.78.10 range 137 139
+access-list 178 remark CSDCF: access to cronus (private net, campus only)
+access-list 178 permit tcp any host 172.24.78.10 eq 22
+!access-list 178 permit tcp any host 171.64.78.11 eq 22
+!access-list 178 permit tcp any host 171.64.78.132 eq 22
+!access-list 178 remark CSD-CF: cta-sensor, for Cyber-TA project (dabo)
+!access-list 178 permit tcp any host 171.64.78.43 eq 22
+access-list 178 remark CSD-CF: splatdesk, for Andrew Bortz
+access-list 178 permit ip any host 171.64.78.44 
+access-list 178 remark CSD-CF: sshd for cipher
+access-list 178 permit tcp any host 171.64.78.146 eq 22
+access-list 178 permit tcp any host 171.64.78.25 eq 22
+access-list 178 remark CSD-CF: aes, rsa for mitchell & dabo
+access-list 178 permit tcp any host 171.64.78.14 eq 22
+access-list 178 permit tcp any host 171.64.78.48 
+access-list 178 permit tcp any host 171.64.78.54 
+access-list 178 permit tcp any host 171.64.78.62 eq 22
+access-list 178 remark CSD-CF: moa holes
+access-list 178 permit tcp any host 171.64.78.81 eq 22
+access-list 178 permit tcp any host 171.64.78.81 eq 5467
+access-list 178 remark 
+access-list 178 remark CSDCF: Holes for dabo
+access-list 178 remark 
+access-list 178 remark CSDCF: Holes for Pratt
+access-list 178 permit tcp any host 171.64.78.221
+access-list 178 permit tcp any host 171.64.78.149 range ftp-data ftp
+access-list 178 permit tcp any host 171.64.78.164 eq 22
+access-list 178 permit tcp any host 171.64.78.120 eq smtp
+access-list 178 permit tcp any host 171.64.78.120 eq 22
+access-list 178 permit tcp any host 171.64.78.65 eq smtp
+access-list 178 permit tcp any host 171.64.78.65 eq 22
+access-list 178 permit tcp any host 171.64.78.29 eq 22
+access-list 178 permit tcp any host 171.64.78.237 eq 22
+access-list 178 permit tcp any host 171.64.78.237 eq smtp
+access-list 178 remark CSDCF: Holes for Knuth
+access-list 178 permit tcp any host 171.64.78.222
+access-list 178 permit tcp any host 171.64.78.223
+access-list 178 remark CSDCF: Knuth DSL
+!access-list 178 permit ip 66.166.75.0 0.0.0.3 any
+access-list 178 permit ip 171.66.180.176 0.0.0.3 any
+access-list 178 remark CSDCF: Aiken/Widom DSL
+access-list 178 permit ip 171.66.183.113 0.0.0.7 any
+access-list 178 permit ip any host 171.64.78.77
+access-list 178 permit ip any host 171.64.78.20
+access-list 178 permit tcp any host 171.64.78.21 eq 22
+access-list 178 remark CSDCF: Aiken, for moss
+access-list 178 permit tcp any host 171.64.78.49 eq 7690
+access-list 178 permit tcp any host 171.64.78.49 eq 80
+access-list 178 permit tcp any host 171.64.78.49 eq 5319
+access-list 178 remark CSDCF: Aiken, for kahu
+access-list 178 permit tcp any host 171.64.78.39 eq 22
+access-list 178 remark CSDCF: tusker for Sorav Bansal (aiken)
+access-list 178 permit tcp any host 171.64.78.63 eq 80
+access-list 178 remark Holes for Syzygy
+access-list 178 permit tcp any host 171.24.78.109 eq 8765
+access-list 178 remark CSDCF: Plotkin
+access-list 178 permit tcp any host 171.64.78.42
+access-list 178 permit tcp any host 171.64.78.191 eq 22
+access-list 178 permit tcp any host 171.64.78.216 eq 22
+access-list 178 permit tcp any host 171.64.78.245 eq 22
+access-list 178 permit tcp any host 171.64.78.246 eq 22
+access-list 178 permit tcp any host 171.64.78.247 eq 22
+access-list 178 permit tcp any host 171.64.78.247 eq 902
+access-list 178 permit tcp any host 171.64.78.247 eq 8333
+access-list 178 permit tcp any host 171.64.78.248 eq 22
+access-list 178 permit tcp any host 171.64.78.248 eq 902
+access-list 178 permit tcp any host 171.64.78.248 eq 8333
+access-list 178 permit tcp any host 171.64.78.21 eq 9999
+access-list 178 permit tcp any host 171.64.78.26 eq 22
+access-list 178 permit tcp any host 171.64.78.18 eq 22
+access-list 178 remark ### Four lines for the Powernet project
+access-list 178 permit tcp 171.64.65.21  0.0.0.0 host 172.24.78.203 eq 22
+access-list 178 permit tcp 172.27.76.233 0.0.0.0 host 172.24.78.203 eq 22
+access-list 178 permit tcp 171.64.65.21  0.0.0.0 host 172.24.78.204 eq 22
+access-list 178 permit tcp 172.27.76.233 0.0.0.0 host 172.24.78.204 eq 22
+access-list 178 permit tcp any host 171.64.78.18 eq 2401
+access-list 178 permit tcp any host 171.64.78.167 eq www
+access-list 178 permit tcp any host 171.64.78.167 eq 8080
+access-list 178 permit tcp any host 171.64.78.167 eq smtp
+access-list 178 permit ip host 171.64.70.12 any 
+access-list 178 deny   tcp any any
+access-list 178 permit ip any any
+exit
+wr mem
+! vim:syn=ios ft=ios

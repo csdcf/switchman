@@ -58,9 +58,16 @@ route-map gnat permit 2001
 !
 
 
+# Disable NAT on interface you're managing from!
+int vlan 64
+no ip policy route-map
+exit
+
 no access-list 2001
 access-list 2001 remark # $Id$
 access-list 2001 remark # What matches this ACL gets NATed. Default is NO NAT.
+access-list 2001 remark # don't NAT from public gates nets
+access-list 2001 deny ip 171.64.0.0 0.3.255.255 any
 access-list 2001 remark ######  Use a 'deny' to not NAT from certain private IP
 access-list 2001 remark # Don't nat from Nick McKeown's virtual router class
 access-list 2001 deny ip 192.168.128.0 0.0.7.255 any

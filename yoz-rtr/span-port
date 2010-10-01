@@ -1,0 +1,29 @@
+no monitor session 2
+monitor session 2 source vlan 2 - 3 , 64 - 74 , 76 - 100 , 291 - 292 rx
+monitor session 2 source vlan 364 , 366 - 378 rx
+monitor session 2 source vlan 632 , 898 rx
+monitor session 2 destination interface Gi2/6
+
+!# gb1, gb2
+no monitor session 1
+monitor session 1 source vlan 2 - 3 , 64 - 74 , 76 - 100 , 291 - 292 rx
+monitor session 1 source vlan 364 , 366 - 378 rx
+monitor session 1 source vlan 632 , 898 rx
+monitor session 1 destination interface Gi2/6
+
+no monitor session 1
+monitor session 1 source interface Port-channel31 rx
+monitor session 1 source interface Port-channel33 rx
+monitor session 1 source interface GigabitEthernet2/1 - 4 rx
+monitor session 1 source interface GigabitEthernet3/6 - 10 rx
+monitor session 1 source interface GigabitEthernet3/13 rx
+monitor session 1 source interface GigabitEthernet5/2 rx
+monitor session 1 source interface FastEthernet4/47 rx
+monitor session 1 source interface TenGigabitEthernet1/1 rx
+monitor session 1 source interface TenGigabitEthernet1/3 rx
+monitor session 1 source interface TenGigabitEthernet7/1 rx
+!monitor session 1 filter vlan 2 - 3 , 64 - 74 , 76 - 100 , 291 - 292
+!monitor session 1 filter vlan 364 , 366 - 378
+!monitor session 1 filter vlan 632 , 898
+monitor session 1 destination interface Gi3/16
+

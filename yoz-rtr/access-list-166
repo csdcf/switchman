@@ -1,0 +1,68 @@
+!! access list mostly for xenon outgoing.
+!access-list 166 permit ip any host 171.64.64.47 
+!access-list 166 permit ip any host 171.64.64.70 
+!access-list 166 permit tcp host 171.64.66.201 any established
+!access-list 166 permit tcp host 171.64.66.201 any eq ftp-data
+!access-list 166 permit tcp host 171.64.66.201 any eq ident
+!! Allow some things for maintenance
+!access-list 166 permit tcp host 171.64.66.201 171.64.64.0 0.0.0.255 any
+!access-list 166 permit tcp host 171.64.66.201 171.64.0.0 0.3.255.255 eq 22
+!access-list 166 permit tcp host 171.64.66.201 171.64.0.0 0.3.255.255 eq www
+!access-list 166 permit tcp host 171.64.66.201 171.64.0.0 0.3.255.255 eq ftp
+!access-list 166 permit tcp host 171.64.66.201 171.64.0.0 0.3.255.255 eq 88
+!access-list 166 permit tcp host 171.64.66.201 171.64.0.0 0.3.255.255 eq 749
+!access-list 166 permit tcp host 171.64.66.201 171.64.0.0 0.3.255.255 eq 750
+!access-list 166 permit tcp host 171.64.66.201 171.64.0.0 0.3.255.255 eq 783
+!access-list 166 permit tcp host 171.64.66.201 171.64.0.0 0.3.255.255 eq 4444
+!access-list 166 permit tcp host 171.64.66.201 any eq 37
+!access-list 166 permit tcp host 171.64.66.201 any eq smtp
+!! Whois, whois++
+!access-list 166 permit tcp host 171.64.66.201 any eq 43
+!access-list 166 permit tcp host 171.64.66.201 any eq 63
+!! ?
+!access-list 166 permit tcp host 171.64.66.201 any eq 45
+!access-list 166 permit tcp host 171.64.66.201 any eq domain
+!access-list 166 permit tcp host 171.64.66.201 any eq finger
+!access-list 166 permit tcp host 171.64.66.201 any eq 102
+!access-list 166 permit tcp host 171.64.66.201 any eq ident
+!access-list 166 permit tcp host 171.64.66.201 any eq nntp
+!access-list 166 permit tcp host 171.64.66.201 any eq 123
+!access-list 166 permit tcp host 171.64.66.201 host 171.64.67.150 eq cmd
+!! old sunburn
+!access-list 166 permit tcp host 171.64.66.201 host 171.64.67.178 eq cmd
+!! new sunburn
+!access-list 166 permit tcp host 171.64.66.201 host 171.64.64.178 eq cmd
+!access-list 166 permit tcp host 171.64.66.201 any range 631 636
+!access-list 166 permit tcp host 171.64.66.201 any eq 713
+!access-list 166 permit tcp host 171.64.66.201 any eq 750
+!access-list 166 permit tcp host 171.64.66.201 host 171.64.67.150 range 901 1024
+!! old sunburn
+!access-list 166 permit tcp host 171.64.66.201 host 171.64.67.178 range 901 1024
+!! new sunburn
+!access-list 166 permit tcp host 171.64.66.201 host 171.64.64.178 range 901 1024
+!access-list 166 permit tcp host 171.64.66.201 any eq 2702
+!access-list 166 permit tcp host 171.64.66.201 any eq 3306
+!access-list 166 permit tcp host 171.64.66.201 any eq 4444
+!access-list 166 permit tcp host 171.64.66.201 any range 5556 5558
+!access-list 166 permit tcp host 171.64.66.201 any range 7000 7010
+!access-list 166 permit tcp host 171.64.66.201 any eq 6000
+!access-list 166 permit tcp host 171.64.66.201 any gt 30000
+!! old sunburn
+!access-list 166 permit tcp host 171.64.66.201 host 171.64.67.178 eq 6004
+!! new sunburn
+!access-list 166 permit tcp host 171.64.66.201 host 171.64.64.178 eq 6004
+!access-list 166 deny   tcp host 171.64.66.201 any
+!access-list 166 permit tcp any any
+!access-list 166 permit udp host 171.64.66.201 171.64.0.0 0.3.255.255 eq 22
+!access-list 166 permit udp host 171.64.66.201 171.64.0.0 0.3.255.255 eq 88
+!access-list 166 permit udp host 171.64.66.201 171.64.0.0 0.3.255.255 eq 749
+!access-list 166 permit udp host 171.64.66.201 171.64.0.0 0.3.255.255 eq 750
+!access-list 166 permit udp host 171.64.66.201 any eq time
+!access-list 166 permit udp host 171.64.66.201 any eq domain
+!access-list 166 permit udp host 171.64.66.201 any eq 750
+!access-list 166 permit udp host 171.64.66.201 any eq 2049
+!access-list 166 permit udp host 171.64.66.201 any eq 4045
+!access-list 166 permit udp host 171.64.66.201 any range 7000 7009
+!access-list 166 deny   udp host 171.64.66.201 any
+!access-list 166 permit udp any any
+!access-list 166 permit ip any any

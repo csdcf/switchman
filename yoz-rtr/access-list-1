@@ -1,0 +1,15 @@
+no access-list 1
+access-list 1 permit 171.64.64.184
+access-list 1 permit 171.64.64.178
+access-list 1 permit 171.64.64.112
+access-list 1 permit 171.64.64.57
+access-list 1 permit 127.0.0.3
+access-list 1 permit 127.0.0.2
+access-list 1 permit 172.16.0.0 0.0.255.255
+access-list 1 permit 171.64.0.0 0.0.3.255
+access-list 1 permit 171.64.20.0 0.0.0.255
+access-list 1 permit 171.64.24.128 0.0.0.127
+access-list 1 permit 171.64.7.0 0.0.0.127
+access-list 1 permit 171.66.66.76 0.0.0.3
+access-list 1 permit 172.26.66.76 0.0.0.3
+

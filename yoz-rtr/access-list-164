@@ -1,0 +1,44 @@
+# This file needs to be a complete, valid terminal session post-enable
+conf t
+no access-list 164
+access-list 164 remark CSDCF: ACL for AI/Robotics, vlan 68
+access-list 164 remark $Id: access-list-164,v 1.2 2010/06/29 18:06:23 miles Exp $
+access-list 164 remark ###################################################
+access-list 164 permit tcp any any established
+access-list 164 remark CSDCF: private to public and back
+access-list 164 permit ip 171.64.64.0 0.0.0.255 172.24.64.0 0.0.0.255
+access-list 164 permit ip 172.24.64.0 0.0.0.255 171.64.64.0 0.0.0.255
+access-list 164 remark CSDCF: printing from AI/KSL
+access-list 164 permit tcp 172.24.71.0 0.0.0.255 172.24.68.0 0.0.1.255 eq 515
+access-list 164 permit tcp 172.24.71.0 0.0.0.255 172.24.68.0 0.0.1.255 eq 631
+access-list 164 permit tcp 172.24.71.0 0.0.0.255 172.24.68.0 0.0.1.255 eq 9100
+access-list 164 permit tcp 171.64.71.0 0.0.0.255 172.24.68.0 0.0.1.255 eq 515
+access-list 164 permit tcp 171.64.71.0 0.0.0.255 172.24.68.0 0.0.1.255 eq 631
+access-list 164 permit tcp 171.64.71.0 0.0.0.255 172.24.68.0 0.0.1.255 eq 9100
+access-list 164 remark CSDCF: printing from Gates admin net
+access-list 164 permit tcp 172.27.64.0 0.0.0.255 172.24.68.0 0.0.1.255 eq 515
+access-list 164 permit tcp 172.27.64.0 0.0.0.255 172.24.68.0 0.0.1.255 eq 631
+access-list 164 permit tcp 172.27.64.0 0.0.0.255 172.24.68.0 0.0.1.255 eq 9100
+access-list 164 remark CSDCF: temporarily allow all for TBX
+access-list 164 permit ip any host 172.24.68.89
+access-list 164 remark CSDCF: Allow in CS nets
+access-list 164 permit ip 171.64.64.0 0.0.0.255 any
+access-list 164 permit ip 172.24.64.0 0.0.0.255 any
+access-list 164 remark deny ip any host 172.24.69.186
+access-list 164 remark ###################################################
+access-list 164 remark CSDCF: Bejerano host dev
+access-list 164 permit tcp any host 171.64.68.36 eq 80
+access-list 164 permit tcp any host 171.64.68.36 eq 443
+access-list 164 permit tcp any host 171.64.68.36 eq 22
+access-list 164 remark CSDCF: Bejerano host hoxa
+access-list 164 permit tcp any host 171.64.68.40 eq 22
+access-list 164 permit tcp any any range ftp ftp-data
+access-list 164 permit tcp any any eq ident
+access-list 164 remark permit tcp any any eq 80
+access-list 164 permit tcp any any eq 443
+access-list 164 remark CSDCF: allow wordgames
+access-list 164 deny   tcp any any
+access-list 164 permit ip any any
+exit
+wr mem
+! vim:syn=ios
