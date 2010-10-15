@@ -1,0 +1,46 @@
+gates-sw-mdf-1# show class
+
+class ipv4 "monitor-exclude"
+    10 ignore ip any 171.64.65.0/24
+    11 ignore ip 171.64.65.0/24 any
+    12 ignore ip any 172.24.65.0/24
+    13 ignore ip 172.24.65.0/24 any
+
+    20 ignore ip any 171.67.65.0/24
+    21 ignore ip 171.67.65.0/24 any
+    23 ignore ip any 172.27.65.0/24
+    24 ignore ip 172.27.65.0/24 any
+
+    30 ignore ip any 172.28.64.0 0.0.3.255
+    31 ignore ip 172.28.64.0 0.0.3.255 any
+
+    40 ignore ip any 171.66.2.16/29
+    41 ignore ip 171.66.2.16/29 any
+exit 
+
+gates-sw-mdf-1# show policy 
+
+policy mirror "monitor1"
+    10 class ipv4 "monitor-exclude" action mirror 1
+    default-class action mirror 1
+exit
+
+i
+
+yoza-rtr#show run | inc monitor
+monitor session 1 source interface Te7/2 rx
+monitor session 1 destination interface Gi2/6
+yoza-rtr#show run int gi2/6
+Building configuration...
+
+Current configuration : 253 bytes
+!
+interface GigabitEthernet2/6
+ description floodgate eth0
+  switchport
+   switchport trunk encapsulation dot1q
+    switchport trunk allowed vlan 64,66-100,291,292,364,366-378,632,898
+     switchport mode trunk
+      no cdp enable
+       spanning-tree portfast disable
+       end
