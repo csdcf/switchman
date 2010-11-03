@@ -9,8 +9,11 @@ access-list 178 remark CSDCF: private to public and back
 access-list 178 permit ip 171.64.78.0 0.0.0.255 172.24.78.0 0.0.0.255
 access-list 178 permit ip 172.24.78.0 0.0.0.255 171.64.78.0 0.0.0.255
 access-list 178 remark CSDCF: Allow in CS nets
-access-list 178 permit ip 171.64.64.0 0.0.0.255 any
-access-list 178 permit ip 172.24.64.0 0.0.0.255 any
+!access-list 178 permit ip 171.64.64.0 0.0.0.255 any
+!access-list 178 permit ip 172.24.64.0 0.0.0.255 any
+access-list 178 remark CSDCF: All of campus?
+access-list 178 permit ip 171.64.0.0 0.3.255.255 any
+access-list 178 permit ip 172.24.0.0 0.3.255.255 any
 access-list 178 remark CSDCF: Permits for all hosts on theory net
 access-list 178 permit tcp any any eq www
 access-list 178 permit tcp any any eq 443
@@ -21,12 +24,12 @@ access-list 178 permit ip any host 171.64.78.10
 access-list 178 permit ip any host 171.64.78.25
 access-list 178 permit ip any host 171.64.78.177
 access-list 178 remark CSDCF: printing from Gates admin net
-access-list 178 permit tcp 172.27.64.0 0.0.0.255 any eq 515
-access-list 178 permit tcp 172.27.64.0 0.0.0.255 any eq 631
-access-list 178 permit tcp 172.27.64.0 0.0.0.255 any eq 9100
+!access-list 178 permit tcp 172.27.64.0 0.0.0.255 any eq 515
+!access-list 178 permit tcp 172.27.64.0 0.0.0.255 any eq 631
+!access-list 178 permit tcp 172.27.64.0 0.0.0.255 any eq 9100
 !access-list 178 permit tcp host 171.64.67.150 any
 access-list 178 remark CSD-CF:
-access-list 178 permit tcp 171.64.70.0 0.0.0.255 host 171.64.78.52 gt 500
+!access-list 178 permit tcp 171.64.70.0 0.0.0.255 host 171.64.78.52 gt 500
 !access-list 178 permit tcp any host 171.64.78.10 eq 22
 !access-list 178 permit tcp any host 171.64.78.10 eq smtp
 !access-list 178 permit tcp any host 171.64.78.10 eq pop3
@@ -58,7 +61,7 @@ access-list 178 remark
 access-list 178 remark CSDCF: Holes for dabo
 access-list 178 remark 
 access-list 178 remark CSDCF: Holes for Pratt
-access-list 178 permit tcp any host 171.64.78.221
+!access-list 178 permit tcp any host 171.64.78.221
 access-list 178 permit tcp any host 171.64.78.149 range ftp-data ftp
 access-list 178 permit tcp any host 171.64.78.164 eq 22
 access-list 178 permit tcp any host 171.64.78.120 eq smtp
@@ -102,18 +105,18 @@ access-list 178 permit tcp any host 171.64.78.248 eq 22
 access-list 178 permit tcp any host 171.64.78.248 eq 902
 access-list 178 permit tcp any host 171.64.78.248 eq 8333
 access-list 178 permit tcp any host 171.64.78.21 eq 9999
-access-list 178 permit tcp any host 171.64.78.26 eq 22
-access-list 178 permit tcp any host 171.64.78.18 eq 22
+!access-list 178 permit tcp any host 171.64.78.26 eq 22
+!access-list 178 permit tcp any host 171.64.78.18 eq 22
 access-list 178 remark ### Four lines for the Powernet project
 access-list 178 permit tcp 171.64.65.21  0.0.0.0 host 172.24.78.203 eq 22
 access-list 178 permit tcp 172.27.76.233 0.0.0.0 host 172.24.78.203 eq 22
 access-list 178 permit tcp 171.64.65.21  0.0.0.0 host 172.24.78.204 eq 22
 access-list 178 permit tcp 172.27.76.233 0.0.0.0 host 172.24.78.204 eq 22
-access-list 178 permit tcp any host 171.64.78.18 eq 2401
-access-list 178 permit tcp any host 171.64.78.167 eq www
-access-list 178 permit tcp any host 171.64.78.167 eq 8080
-access-list 178 permit tcp any host 171.64.78.167 eq smtp
-access-list 178 permit ip host 171.64.70.12 any 
+!access-list 178 permit tcp any host 171.64.78.18 eq 2401
+!access-list 178 permit tcp any host 171.64.78.167 eq www
+!access-list 178 permit tcp any host 171.64.78.167 eq 8080
+!access-list 178 permit tcp any host 171.64.78.167 eq smtp
+!access-list 178 permit ip host 171.64.70.12 any 
 access-list 178 deny   tcp any any
 access-list 178 permit ip any any
 exit

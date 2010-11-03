@@ -1,9 +1,64 @@
+#------------------------------------------------------------------------------
+# new -- for HP ProCurve:
+#------------------------------------------------------------------------------
+
+0) make a session (1-4) on  a mirror port
+
+mirror-port D24
+mirror 1 name floodgate0 port D23
+mirror 2 name floodgate1 port D24
+
+1)...  create class (use only ignore so all else will go through)
+
+class ipv4 monitor-exclude
+ignore ip any 171.64.65.0/24
+ignore ip 171.64.65.0/24 any
+exit
+
+2) .... create a policy referencing the class (default-class catches all non-matches)
+
+policy mirror monitor1
+10 class ipv4 "monitor-exclude" action mirror 1
+default-class action mirror 1
+exit
+
+policy mirror monitor2
+10 class ipv4 "monitor-exclude" action mirror 2
+default-class action mirror 2
+exit
+
+
+3) .... apply policy to VLAN
+
+vlan 68 service-policy monitor2 in
+vlan 74 service-policy monitor2 in
+vlan 100 service-policy monitor2 in
+
+vlan 376 service-policy monitor1 in
+vlan 376 service-policy monitor1 in
+vlan 376 service-policy monitor1 in
+
+4) display
+
+show class argus
+show policy argus-all
+show monitor name floodgate
+
+#------------------------------------------------------------------------------
+# yoza/b, Cisco IOS
+#------------------------------------------------------------------------------
 no monitor session 2
-monitor session 2 source vlan 2 - 3 , 64 - 74 , 76 - 100 , 291 - 292 rx
+monitor session 2 source vlan 2 - 3 , 64 , 66 - 100 , 291 - 292 rx
 monitor session 2 source vlan 364 , 366 - 378 rx
 monitor session 2 source vlan 632 , 898 rx
 monitor session 2 destination interface Gi2/6
 
+
+
+
+#------------------------------------------------------------------------------
+# Old cisco
+#------------------------------------------------------------------------------
 !# gb1, gb2
 no monitor session 1
 monitor session 1 source vlan 2 - 3 , 64 - 74 , 76 - 100 , 291 - 292 rx

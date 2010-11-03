@@ -50,13 +50,18 @@
 ip policy route-map gnat
 
 # route map
-no route-map gnat
-route-map gnat permit 2001
+no route-map gnat-1
+route-map gnat-1 permit 2001
  description # NAT for Gates, Packard, CIS. Anything matching 2000 gets NAT
  match ip address 2001
- set ip next-hop 172.24.70.68
+ set ip next-hop 172.24.70.11
 !
+no route-map gnat-2
+route-map gnat-2 permit 2002
 
+ description # NAT for Gates, Packard, CIS. Anything matching 2000 gets NAT
+ match ip address 2001
+ set ip next-hop 172.24.70.12
 
 # Disable NAT on interface you're managing from!
 int vlan 64
