@@ -1,0 +1,130 @@
+#!/usr/bin/python
+#
+# switchman -- CLI manager for switches
+# miles@cs.stanford.edu
+#
+# This should make calls to zenoss to determine switch type and proper name
+# (obviously, there are many other things wrong with this at the moment.)
+
+import pexpect
+import sys
+import time
+import os
+
+TimeStamp = time.strftime("%m%d%y_%I%M%S%p", time.localtime())
+
+def print_ticks():
+    print '.'
+
+try:
+
+    if sys.argv[1] == '-s':
+        #-------------------------------------------------------------------------
+        # Save config file for switch in second arg
+        #-------------------------------------------------------------------------
+        print 'Executing: scp -q %s:/cfg/startup-config /afs/.cs/etc/gnet/conf.d/%s.conf' % (sys.argv[2], sys.argv[2])
+
+        (output, status) = pexpect.run ('scp -q %s:/cfg/startup-config /afs/.cs/etc/gnet/conf.d/%s.conf' % (sys.argv[2], sys.argv[2]), withexitstatus=1)
+
+        if status!=1:
+            print output
+            print "Successfully saved config to conf.d/%s\n" % sys.argv[2]
+        else:
+            print output
+            exit
+
+    elif sys.argv[1] == '-o':
+        print 'Executing: scp -q %s %s:/os/%s' % (sys.argv[2], sys.argv[4], sys.argv[3])
+        exit
+        #(output, status) = pexpect.run ('scp -q %s %s:/os/%s' % (sys.argv[2], sys.argv[4], sys.argv[3]), events={'(?i)assword':'<your password>\n'}, withexitstatus=1)
+        (output, status) = pexpect.run ('scp -q %s %s:/os/%s' % (sys.argv[2], sys.argv[4], sys.argv[3]), withexitstatus=1)
+
+        if status!=1:
+            print output
+            print "Successfully saved config to conf.d/%s\n" % sys.argv[2]
+        else:
+            print output
+            exit
+
+    if sys.argv[1] == '-k':
+        #-------------------------------------------------------------------------
+        # Save config file for switch in second arg
+        #-------------------------------------------------------------------------
+        print 'Executing: scp -q gates-sw/authorized_keys_mgr %s:/ssh/mgr_keys/authorized_keys' % (sys.argv[2])
+
+        (output, status) = pexpect.run ('scp -q gates-sw/authorized_keys_mgr  %s:/ssh/mgr_keys/authorized_keys' % (sys.argv[2]) , withexitstatus=1) 
+        if status!=1:
+            print output
+            print "Successfully uploaded mgr ssh keys to %s\n" % sys.argv[2]
+        else:
+            print output
+
+        print 'Executing: scp -q gates-sw/authorized_keys_oper %s:/ssh/oper_keys/authorized_keys' % (sys.argv[2])
+
+        (output, status) = pexpect.run ('scp gates-sw/authorized_keys_oper  %s:/ssh/oper_keys/authorized_keys' % (sys.argv[2]) , withexitstatus=1) 
+        if status!=1:
+            print output
+            print "Successfully uploaded oper ssh keys to %s\n" % sys.argv[2]
+        else:
+            print output
+            exit
+
+    elif sys.argv[1] == '-f':
+        #-------------------------------------------------------------------------
+        # Execute commands from file on switch
+        #-------------------------------------------------------------------------
+        foo = pexpect.spawn('ssh %s' % sys.argv[3])
+        print 'exec: ssh %s' % sys.argv[3]
+
+        index = foo.expect(['.*ssword:', '#', 'Press any key'])
+
+        if index == 0:
+            print "Couldn't login to switch without a password. You need ssh keys!"
+            foo.close()
+            exit
+
+        foo.logfile = sys.stdout
+        foo.send('\r')
+        foo.expect('#')
+
+
+        #print 'opening %s\r' % sys.argv[2]
+        f = open(sys.argv[2], "r")
+        cmd=f.readline()
+        time.sleep(0.1)
+        while cmd:
+            #print 'read: %s' % cmd
+            #foo.logfile = None
+            time.sleep(0.8)
+            foo.sendline(cmd)
+            #foo.logfile = sys.stdout
+            #print 'waiting for prompt'
+            foo.expect('#',timeout=300)
+            cmd=f.readline()
+
+        #print 'closing %s\r' % sys.argv[2]
+        f.close()
+
+        #foo.sendline('\rshow time')
+        #foo.expect(':')
+        #print 'sending logout\r'
+        foo.logfile = None
+        foo.expect('#',timeout=300)
+        time.sleep(0.3)
+        foo.sendline('\rlogout')
+        foo.expect('y/n')
+        foo.sendline('y')
+        foo.expect(pexpect.EOF)
+        foo.close()
+
+    else:
+        raise
+
+
+except:
+    print 'Usage: switchman [ -k | -f file | -s ] switch_name\n'
+    print '    -k: upload ssh keys from gates-sw/* to switch_name \n' 
+    print '    -s: save switch config to conf.d/switch_name.conf\n' 
+    print '    -f: execute commands stored in file on switch_name [CAUTION!]\n\n' 
+    print "Unexpected error:", sys.exc_info()[0]    
+    exit
