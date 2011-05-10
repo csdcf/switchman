@@ -1,4 +1,6 @@
 #!/usr/bin/python
+# $Id$
+# vi: shiftwidth=4 tabstop=4 smarttab expandtab formatoptions=croqlA
 #
 # switchman -- CLI manager for switches
 # miles@cs.stanford.edu
