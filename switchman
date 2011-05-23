@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # $Id$
-# vi: shiftwidth=4 tabstop=4 smarttab expandtab formatoptions=croqlA
+# vi: shiftwidth=4 tabstop=4 smarttab expandtab formatoptions=croql
 #
 # switchman -- CLI manager for switches
 # miles@cs.stanford.edu
@@ -24,17 +24,19 @@ try:
         #-------------------------------------------------------------------------
         # Save config file for switch in second arg
         #-------------------------------------------------------------------------
-        print 'Executing: scp -q %s:/cfg/startup-config /afs/.cs/etc/gnet/conf.d/%s.conf' % (sys.argv[2], sys.argv[2])
+        print 'Executing: scp -q %s:/cfg/startup-config conf.d/%s.conf' % (sys.argv[2], sys.argv[2])
 
-        (output, status) = pexpect.run ('scp -q %s:/cfg/startup-config /afs/.cs/etc/gnet/conf.d/%s.conf' % (sys.argv[2], sys.argv[2]), withexitstatus=1)
+        (output, status) = pexpect.run ('scp -q %s:/cfg/startup-config conf.d/%s.conf' % (sys.argv[2], sys.argv[2]), withexitstatus=1)
 
         if status!=1:
             print output
             print "Successfully saved config to conf.d/%s\n" % sys.argv[2]
         else:
             print output
+            print "Failed to save config to conf.d/%s\n" % sys.argv[2]
             exit
 
+    # Scp software image file arg2 [primary|secondary] switch
     elif sys.argv[1] == '-o':
         print 'Executing: scp -q %s %s:/os/%s' % (sys.argv[2], sys.argv[4], sys.argv[3])
         exit
@@ -48,7 +50,7 @@ try:
             print output
             exit
 
-    if sys.argv[1] == '-k':
+    elif sys.argv[1] == '-k':
         #-------------------------------------------------------------------------
         # Save config file for switch in second arg
         #-------------------------------------------------------------------------
@@ -127,6 +129,7 @@ except:
     print 'Usage: switchman [ -k | -f file | -s ] switch_name\n'
     print '    -k: upload ssh keys from gates-sw/* to switch_name \n' 
     print '    -s: save switch config to conf.d/switch_name.conf\n' 
+    print '    -o: update switch software conf.d/switch_name.conf\n' 
     print '    -f: execute commands stored in file on switch_name [CAUTION!]\n\n' 
     print "Unexpected error:", sys.exc_info()[0]    
     exit
