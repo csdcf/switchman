@@ -83,9 +83,23 @@ access-list 168 remark permit tcp any host 171.64.68.244 eq www
 access-list 168 remark CSDCF: robots, for sebastian thrun
 access-list 168 permit tcp any host 171.64.68.174 eq 22
 access-list 168 permit tcp any host 171.64.68.174 eq www
+access-list 168 remark CSDCF: gadfly001 for Fei-Fei Li, 22-May-2011
+access-list 168 permit tcp any host 171.64.68.102 eq 22
+access-list 168 permit tcp any host 171.64.68.102 eq www
+access-list 168 remark CSDCF: cs210-5, for Arda Kara, Spring 2011
+access-list 168 permit tcp any host 171.64.69.29 eq 22
+access-list 168 permit tcp any host 171.64.69.29 eq www
+access-list 168 remark CSDCF: for twisted access to host robots Feb 2011
+access-list 168 permit tcp any host 171.64.68.174 range 7226 7246
 access-list 168 remark CSDCF: vectormagic for diebel (thrun)
 access-list 168 permit tcp any host 171.64.68.226 eq www
 access-list 168 permit tcp any host 171.64.68.226 eq 443
+access-list 168 remark CSDCF: dynovader for Rufung Forrest Lin (forrestl)
+access-list 168 permit tcp any host 171.64.69.28 eq ftp
+access-list 168 permit tcp any host 171.64.69.28 eq ftp-data
+access-list 168 permit tcp any host 171.64.69.28 eq www
+access-list 168 permit tcp any host 171.64.69.28 eq 3389
+access-list 168 permit tcp any host 171.64.69.28 eq 5900
 access-list 168 remark CSDCF: altman RT #43201
 access-list 168 permit tcp any host 172.24.68.169 eq 9000
 access-list 168 remark CSDCF: altman RT #57898
