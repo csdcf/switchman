@@ -84,8 +84,8 @@ access-list 168 remark CSDCF: robots, for sebastian thrun
 access-list 168 permit tcp any host 171.64.68.174 eq 22
 access-list 168 permit tcp any host 171.64.68.174 eq www
 access-list 168 remark CSDCF: gadfly001 for Fei-Fei Li, 22-May-2011
-access-list 168 permit tcp any host 171.64.68.102 eq 22
-access-list 168 permit tcp any host 171.64.68.102 eq www
+access-list 168 permit tcp any host 171.64.69.102 eq 22
+access-list 168 permit tcp any host 171.64.69.102 eq www
 access-list 168 remark CSDCF: cs210-5, for Arda Kara, Spring 2011
 access-list 168 permit tcp any host 171.64.69.29 eq 22
 access-list 168 permit tcp any host 171.64.69.29 eq www
