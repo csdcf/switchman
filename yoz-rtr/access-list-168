@@ -111,6 +111,9 @@ access-list 168 permit tcp any host 171.64.68.215
 access-list 168 remark CSDCF: CS 225b robots erratic*
 access-list 168 permit tcp any host 172.24.68.32
 access-list 168 permit tcp any host 172.24.69.237
+access-list 168 remark CSDCF: ssh/sftp on lysander (Samir Menon)
+access-list 168 permit tcp any host 172.24.68.46 eq 22
+access-list 168 permit tcp any host 172.24.68.46 eq 115
 access-list 168 remark CSDCF: Allow mime to uber for backups
 access-list 168 permit tcp  host 171.65.102.109 host 171.64.68.72 eq 22
 access-list 168 remark CSDCF: Allow hox to uber
