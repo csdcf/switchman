@@ -46,6 +46,8 @@ access-list 178 permit tcp any host 172.24.78.10 eq 22
 !access-list 178 permit tcp any host 171.64.78.43 eq 22
 access-list 178 remark CSD-CF: splatdesk, for Andrew Bortz
 access-list 178 permit ip any host 171.64.78.44 
+access-list 178 remark CSD-CF: cware-dev2, for jbau
+access-list 178 permit tcp any host 171.64.78.101 eq 22
 access-list 178 remark CSD-CF: sshd for cipher
 access-list 178 permit tcp any host 171.64.78.146 eq 22
 access-list 178 permit tcp any host 171.64.78.25 eq 22
