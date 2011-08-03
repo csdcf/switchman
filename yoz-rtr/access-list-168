@@ -76,6 +76,8 @@ access-list 168 remark CSDCF: wells, for Roland Philips
 access-list 168 permit tcp any host 171.64.68.207 eq 443
 access-list 168 remark CSDCF: gullu, for ssaria
 access-list 168 permit tcp any host 171.64.68.14 eq www
+access-list 168 remark CSDCF: smart-wing, for twangcat (2011Aug03, bjr)
+access-list 168 permit tcp any host 172.24.68.71 eq www
 access-list 168 remark CSDCF: aishwarya for rahul
 access-list 168 permit tcp any host 172.24.69.103 eq www
 access-list 168 remark CSDCF: nudelman port 80
