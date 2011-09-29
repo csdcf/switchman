@@ -50,6 +50,12 @@ access-list 168 remark CSDCF: allow ai mysql for Spring 2010 CS422
 access-list 168 permit tcp any host 171.64.68.10 eq 3306
 access-list 168 remark CSDCF: web server for Juan Carlos Niebles
 access-list 168 permit tcp any host 171.64.68.145 eq 80
+access-list 168 remark CSDCF: robots for Kurt Konolige
+access-list 168 permit tcp any host 172.24.68.86
+access-list 168 permit tcp any host 172.24.68.161
+access-list 168 permit tcp any host 172.24.69.34
+access-list 168 permit tcp any host 172.24.69.55
+access-list 168 permit tcp any host 172.24.69.218
 access-list 168 remark CSDCF: robo
 access-list 168 permit tcp any host 171.64.68.18
 access-list 168 remark CSDCF: allow all ftp, ident, https, misc
