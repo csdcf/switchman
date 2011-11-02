@@ -70,6 +70,8 @@ access-list 168 remark CSDCF: unknown
 access-list 168 permit tcp any any gt 27000
 access-list 168 remark CSDCF: ai / robotics itself, pop www imap etc.
 access-list 168 permit ip any 171.64.68.9 0.0.0.3 
+access-list 168 remark CSDCF: robot-unicorn, RT 74769
+access-list 168 permit tcp any host 171.64.68.41 eq www
 access-list 168 remark CSDCF: grahamnum, for apml and thrun
 access-list 168 permit tcp any host 171.64.68.32 eq www
 access-list 168 permit tcp any host 171.64.68.32 eq 222
@@ -86,11 +88,6 @@ access-list 168 remark CSDCF: smart-wing, for twangcat (2011Aug03, bjr)
 access-list 168 permit tcp any host 171.64.68.101 eq www
 access-list 168 remark CSDCF: aishwarya for rahul
 access-list 168 permit tcp any host 172.24.69.103 eq www
-access-list 168 remark CSDCF: nudelman port 80
-access-list 168 remark permit tcp any host 171.64.68.244 eq www
-access-list 168 remark CSDCF: carrotbot http/s, req by Justin Chen 23Aug2011
-access-list 168 remark permit tcp any host 171.64.69.30 eq www
-access-list 168 remark permit tcp any host 171.64.69.30 eq 443
 access-list 168 remark CSDCF: robots, for sebastian thrun
 access-list 168 permit tcp any host 171.64.68.174 eq 22
 access-list 168 permit tcp any host 171.64.68.174 eq www
@@ -115,13 +112,6 @@ access-list 168 remark CSDCF: altman RT #43201
 access-list 168 permit tcp any host 172.24.68.169 eq 9000
 access-list 168 remark CSDCF: altman RT #57898
 access-list 168 permit tcp any host 171.64.68.121 eq www
-access-list 168 remark CSDCF: CS 225b hosts, wide open
-access-list 168 permit tcp any host 171.64.68.157
-access-list 168 permit tcp any host 171.64.68.189
-access-list 168 permit tcp any host 171.64.68.215
-access-list 168 remark CSDCF: CS 225b robots erratic*
-access-list 168 permit tcp any host 172.24.68.32
-access-list 168 permit tcp any host 172.24.69.237
 access-list 168 remark CSDCF: ssh/sftp on lysander (Samir Menon)
 access-list 168 permit tcp any host 172.24.68.46 eq 22
 access-list 168 permit tcp any host 172.24.68.46 eq 115

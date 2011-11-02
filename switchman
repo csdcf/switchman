@@ -78,6 +78,7 @@ try:
         # Execute commands from file on switch
         #-------------------------------------------------------------------------
         foo = pexpect.spawn('ssh %s' % sys.argv[3])
+        foo.logfile = None
         print 'exec: ssh %s' % sys.argv[3]
 
         index = foo.expect(['.*ssword:', '#', 'Press any key'])
@@ -87,10 +88,10 @@ try:
             foo.close()
             exit
 
-        foo.logfile = sys.stdout
-        foo.send('\r')
+        foo.send('\rno page\r')
         foo.expect('#')
 
+        foo.logfile = sys.stdout
 
         #print 'opening %s\r' % sys.argv[2]
         f = open(sys.argv[2], "r")
@@ -99,13 +100,14 @@ try:
         while cmd:
             #print 'read: %s' % cmd
             #foo.logfile = None
-            time.sleep(0.8)
+            time.sleep(0.5)
             foo.sendline(cmd)
             #foo.logfile = sys.stdout
             #print 'waiting for prompt'
             foo.expect('#',timeout=300)
             cmd=f.readline()
 
+        sys.stdout.flush()
         #print 'closing %s\r' % sys.argv[2]
         f.close()
 
