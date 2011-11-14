@@ -121,13 +121,13 @@ access-list 168 remark CSDCF: Allow hox to uber
 access-list 168 permit tcp  host 171.65.103.17 host 171.64.68.72 eq 22
 access-list 168 remark CSDCF: allow junior-car to access capek and driving
 access-list 168 permit tcp host 171.66.67.201 host 171.64.68.164 eq 22 
-access-list 168 permit tcp host 171.66.67.201 host 171.64.68.164 eq 80
+access-list 168 permit tcp host 171.66.67.201 host 171.64.68.164 eq www
 access-list 168 permit tcp host 171.66.67.201 host 171.64.68.164 eq 443
 access-list 168 permit tcp host 171.66.67.201 host 172.24.69.172 eq 22
 access-list 168 permit tcp host 171.66.67.201 host 172.24.69.172 eq 80
 access-list 168 permit tcp host 171.66.67.201 host 172.24.69.172 eq 443
 access-list 168 remark CSDCF: allow any host to access web server on imagenet
-access-list 168 permit tcp host any host 171.64.68.16 eq 80
+access-list 168 permit tcp host any host 171.64.68.16 eq www
 access-list 168 permit tcp host any host 171.64.68.16 eq 443
 access-list 168 remark CSDCF: ==================================================
 access-list 168 deny   tcp any any
