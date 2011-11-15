@@ -128,7 +128,7 @@ access-list 168 permit tcp host 171.66.67.201 host 172.24.69.172 eq 80
 access-list 168 permit tcp host 171.66.67.201 host 172.24.69.172 eq 443
 access-list 168 remark CSDCF: allow any host to access web server on imagenet
 access-list 168 permit tcp any host 171.64.68.16 eq www
-access-list 168 permit tcp any host 171.64.68.443 eq www
+access-list 168 permit tcp any host 171.64.68.16 eq 443
 access-list 168 remark CSDCF: ==================================================
 access-list 168 deny   tcp any any
 access-list 168 permit ip any any
