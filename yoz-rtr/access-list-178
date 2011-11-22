@@ -62,6 +62,11 @@ access-list 178 permit tcp any host 171.64.78.81 eq 5467
 access-list 178 remark 
 access-list 178 remark CSDCF: Holes for dabo
 access-list 178 remark 
+access-list 178 remark CSDCF: SMB sharing for zvika-pc
+access-list 178 permit tcp 171.66.20.0 0.0.0.252 host 171.64.78.74 range 137 139
+access-list 178 permit tcp 171.66.24.0 0.0.0.248 host 171.64.78.74 range 137 139
+access-list 178 permit tcp 171.66.20.0 0.0.0.252 host 171.64.78.74 eq 445
+access-list 178 permit tcp 171.66.24.0 0.0.0.248 host 171.64.78.74 eq 445
 access-list 178 remark CSDCF: Holes for Pratt
 !access-list 178 permit tcp any host 171.64.78.221
 access-list 178 permit tcp any host 171.64.78.149 range ftp-data ftp
