@@ -72,6 +72,8 @@ access-list 168 remark CSDCF: ai / robotics itself, pop www imap etc.
 access-list 168 permit ip any 171.64.68.9 0.0.0.3 
 access-list 168 remark CSDCF: robot-unicorn, RT 74769
 access-list 168 permit tcp any host 171.64.68.41 eq www
+access-list 168 remark CSDCF: carrotbot, RT 74821
+access-list 168 permit tcp any host 171.64.68.30 eq www
 access-list 168 remark CSDCF: grahamnum, for apml and thrun
 access-list 168 permit tcp any host 171.64.68.32 eq www
 access-list 168 permit tcp any host 171.64.68.32 eq 222
