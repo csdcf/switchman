@@ -116,8 +116,8 @@ try:
         while cmd:
             #print 'read: %s' % cmd
             #foo.logfile = None
-            time.sleep(0.5)
-            foo.sendline(cmd)
+            time.sleep(0.3)
+            foo.sendline(cmd.strip())
             #foo.logfile = sys.stdout
             #print 'waiting for prompt'
             foo.expect('#',timeout=300)
