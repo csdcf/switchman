@@ -31,9 +31,9 @@ access-list 168 remark CSDCF: Allow in CS nets
 access-list 168 permit ip 171.64.64.0 0.0.0.255 any
 access-list 168 permit ip 172.24.64.0 0.0.0.255 any
 access-list 168 remark CSDCF: holes for stair4a, stair4b, stair-basestation
-access-list 168 permit ip 171.64.72.0 0.0.0.254 host 172.24.68.55 any
-access-list 168 permit ip 171.64.72.0 0.0.0.254 host 172.24.68.186 any
-access-list 168 permit ip 171.64.72.0 0.0.0.254 host 172.24.68.179 any
+access-list 168 permit ip 172.24.72.0 0.0.1.255 host 172.24.68.55
+access-list 168 permit ip 172.24.72.0 0.0.1.255 host 172.24.68.186
+access-list 168 permit ip 172.24.72.0 0.0.1.255 host 172.24.68.179
 access-list 168 remark deny ip any host 172.24.69.186
 access-list 168 remark ###################################################
 access-list 168 remark CSDCF: Bejerano host dev
