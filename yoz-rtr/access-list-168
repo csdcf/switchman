@@ -45,6 +45,8 @@ access-list 168 permit tcp any host 171.64.68.38 eq 80
 access-list 168 permit tcp any host 171.64.68.38 eq 443
 access-list 168 remark CSDCF: Bejerano host hoxa
 access-list 168 permit tcp any host 171.64.68.40 eq 22
+access-list 168 remark CSDCF: Batzoglou host bug
+access-list 168 permit tcp any host 171.64.68.43 eq 22
 access-list 168 remark CSDCF: Bejerano host great
 access-list 168 permit tcp any host 171.64.68.77 eq 80
 access-list 168 permit tcp any host 171.64.68.77 eq 443
