@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#cd /afs/cs.stanford.edu/u/miles/src/network/
+
+for SC in conf.d/y2e2*.conf; do
+    S=$(basename $SC .conf)
+    #scp software/K_15_06_0008.swi $S:/os/primary
+    #scp gates-sw/authorized_keys_mgr  $S:/ssh/mgr_keys/authorized_keys
+    $* $S
+done
