@@ -1,0 +1,10 @@
+config
+time timezone -480
+time daylight-time-rule Continental-US-and-Canada
+timesync sntp
+sntp unicast
+sntp server priority 1 171.64.7.115 3
+sntp server priority 2 171.64.7.67 3
+sntp server priority 3 204.63.224.70 3
+exit
+wr mem

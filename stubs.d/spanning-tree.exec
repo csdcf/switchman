@@ -1,0 +1,10 @@
+config
+#spanning-tree G1-G24 auto-edge-port
+no spanning-tree G1-G24 bpdu-protection
+
+spanning-tree config-name "Gates"
+spanning-tree instance 1 vlan 18 369
+spanning-tree instance 2 vlan 1295
+
+exit
+wr mem
