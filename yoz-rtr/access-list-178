@@ -101,6 +101,8 @@ access-list 178 permit tcp any host 171.64.78.49 eq 80
 access-list 178 permit tcp any host 171.64.78.49 eq 5319
 access-list 178 remark CSDCF: Aiken, for kahu
 access-list 178 permit tcp any host 171.64.78.39 eq 22
+access-list 178 remark CSDCF: Henry Corrigan-Gibbs, for mbarara
+access-list 178 permit tcp any host 171.64.78.32 eq 22
 access-list 178 remark CSDCF: Aiken, for tieke
 access-list 178 permit tcp any host 171.64.78.217 eq 22
 access-list 178 permit tcp any host 171.64.78.217 eq 8080
