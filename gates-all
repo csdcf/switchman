@@ -1,6 +1,5 @@
 #!/bin/bash
 
-cd /afs/cs.stanford.edu/u/miles/src/cs/network/
 
 for SC in conf.d/gates-sw*.conf conf.d/clark-sw*.conf conf.d/hoxa-sw*2.conf; do
     S=$(basename $SC .conf)
