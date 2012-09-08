@@ -1,0 +1,29 @@
+config 
+no vlan 483 
+no vlan 478 
+no vlan 479 
+no vlan 91
+no vlan 93
+no vlan 553 
+no vlan 97 
+no vlan 593 
+no vlan 657 
+no vlan 816 
+no vlan 833 
+no vlan 358 
+no vlan 363 
+no vlan 373 
+no vlan 375 
+no vlan 578 
+no vlan 838 
+no vlan 882 
+no vlan 885 
+no vlan 889 
+no vlan 896 
+no vlan 951 
+no vlan 954 
+no vlan 944 
+no vlan 991 
+no vlan 939 
+exit
+wr mem
