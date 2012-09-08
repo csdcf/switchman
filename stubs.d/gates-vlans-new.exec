@@ -250,7 +250,6 @@ vlan 3852
 static-vlan 3853
 vlan 3853
    name "192.168.136.0/23 HOXA_Cluster"
-132  10.22.64.0/23 Stanford_Wireless
    exit
 static-vlan 3881
 vlan 3881
@@ -301,3 +300,4 @@ vlan 3800
    name "171.64.100.0/23 CIS"
    exit
 exit
+wr mem
