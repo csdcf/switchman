@@ -1,0 +1,12 @@
+conf t
+static-vlan 3864
+vlan 3864 
+   exit 
+static-vlan 3865
+vlan 3865 
+   exit 
+static-vlan 3866
+vlan 3866 
+   exit 
+exit
+wr mem

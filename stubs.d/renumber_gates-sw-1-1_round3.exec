@@ -1,0 +1,17 @@
+conf t
+static-vlan 3864
+vlan 3864 
+   untagged A1-A3,A5,A7-A10,A12-A13,A15,A24,B4,B8,B10,C1-C3,C7,C9-C11,D14,D17,D23-D24 
+   tagged A19,B17,B20,C4,E23 
+   exit 
+static-vlan 3865
+vlan 3865 
+   untagged A16,B7,E7-E8 
+   exit 
+static-vlan 3866
+vlan 3866 
+   untagged A17-A18,A20,E1-E2 
+   tagged C3-C4 
+   exit 
+exit
+wr mem

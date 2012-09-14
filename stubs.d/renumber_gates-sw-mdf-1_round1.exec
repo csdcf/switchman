@@ -1,0 +1,8 @@
+conf t
+static-vlan 3870
+static-vlan 3898
+vlan 3898 
+   tagged E1 
+   exit 
+exit
+wr mem

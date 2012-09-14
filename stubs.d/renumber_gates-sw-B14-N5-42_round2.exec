@@ -1,0 +1,29 @@
+conf t
+static-vlan 3803
+static-vlan 3807
+static-vlan 3808
+static-vlan 3810
+vlan 3810 
+   tagged B21 
+   exit 
+static-vlan 3811
+vlan 3811 
+   tagged B21 
+   exit 
+static-vlan 3812
+static-vlan 3818
+vlan 3818 
+   tagged B21 
+   exit 
+static-vlan 3895
+static-vlan 3820
+static-vlan 3824
+static-vlan 3827
+static-vlan 3828
+static-vlan 3829
+static-vlan 3833
+static-vlan 3834
+static-vlan 3836
+static-vlan 3837
+exit
+wr mem

@@ -1,0 +1,17 @@
+conf t
+static-vlan 3864
+vlan 3864 
+   untagged A2-A3,B11 
+   tagged B21 
+   exit 
+static-vlan 3865
+vlan 3865 
+   tagged B21 
+   exit 
+static-vlan 3866
+vlan 3866 
+   untagged B12 
+   tagged B21 
+   exit 
+exit
+wr mem

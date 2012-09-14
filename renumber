@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# ROUND must be of the form OLDVLAN_NEWVLAN, one pair per line
+ROUND=$1
+
+for SC in conf.d/gates-sw*.conf conf.d/clark-sw*.conf conf.d/hoxa-sw*2.conf; do
+    S=$(basename $SC .conf)
+    OUTFILE="stubs.d/renumber_${S}_${ROUND}.exec"
+
+    echo "${S}:"
+    # naw ./switchman -s $S
+
+    echo -e "conf t" > $OUTFILE
+
+    for LINE in $(cat $ROUND); do
+        IFS='_' read -a VLAN <<< "$LINE"
+        echo "   ${VLAN[0]} -> ${VLAN[1]}"
+
+        echo -e "static-vlan ${VLAN[1]}" >> $OUTFILE
+
+        # Grab existing vlan configuration block from config file
+        perl -ne "print if /^vlan ${VLAN[0]} / .. /exit/" $SC >> $OUTFILE
+
+        # Swap vlan numbers, remove some unwanted lines
+        perl -spi -e "s/^vlan ${VLAN[0]}/vlan ${VLAN[1]}/g" $OUTFILE
+        perl -spi -e "s/^   name.*\n//g" $OUTFILE
+        perl -spi -e "s/^   no ip.*\n//g" $OUTFILE
+
+    done
+
+    echo -e "exit\nwr mem" >> $OUTFILE
+    echo "./switchman -f $OUTFILE $S"
+    #./switchman -f $OUTFILE $S
+
+done
