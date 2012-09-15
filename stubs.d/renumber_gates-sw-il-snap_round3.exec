@@ -1,8 +1,33 @@
 conf t
-static-vlan 3864
-vlan 3864 
-   exit 
 static-vlan 3865
-static-vlan 3866
+static-vlan 3867
+static-vlan 3894
+static-vlan 3899
+static-vlan 3804
+static-vlan 3816
+static-vlan 3802
+static-vlan 3853
+static-vlan 3821
+static-vlan 3822
+static-vlan 3823
+static-vlan 3832
+static-vlan 3835
+vlan 3835 
+   untagged 1-40 
+   exit 
+static-vlan 3838
+static-vlan 3839
+static-vlan 3840
+static-vlan 3841
+static-vlan 3842
+static-vlan 3843
+static-vlan 3844
+static-vlan 3845
+static-vlan 3846
+static-vlan 3847
+static-vlan 3848
+static-vlan 3849
+static-vlan 3850
+static-vlan 3851
 exit
 wr mem

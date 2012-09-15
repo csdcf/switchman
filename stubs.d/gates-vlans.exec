@@ -1,531 +1,319 @@
-config 
-static-vlan 1 
-vlan 1 
-   name "DEFAULT_VLAN" 
-   no ip address 
-   exit 
-static-vlan 64 
-vlan 64 
-   name "17x.x4.64.0/24 CS" 
-   no ip address 
-   exit 
-static-vlan 65 
-vlan 65 
-   name "17x.x4.65.0/24 CS-clients" 
-   no ip address 
-   exit 
-static-vlan 66 
-vlan 66 
-   name "OLD CS-classrooms" 
-   no ip address 
-   exit 
-static-vlan 483
-vlan 483 
-   name "17x.x4.66.0/24 CS-classrooms" 
-   no ip address 
-   exit 
-static-vlan 67 
-vlan 67 
-   name "17x.x4.67.0/24 CS-oddballs" 
-   no ip address 
-   exit 
-static-vlan 68 
-vlan 68 
-   name "17x.x4.68.0/23 CS-SAIL" 
-   no ip address 
-   exit 
-static-vlan 70 
-vlan 70 
-   name "17x.x4.70.0/24 CS-gnet" 
-   exit 
-static-vlan 71 
-vlan 71 
-   name "17x.x4.71.0/24 CS-KSL" 
-   no ip address 
-   exit 
-static-vlan 72 
-vlan 72 
-   name "17x.x4.72.0/23 CS-CSL" 
-   no ip address 
-   exit 
-static-vlan 74 
-vlan 74 
-   name "17x.x4.74.0/24 McKeown-Tobagi" 
-   no ip address 
-   exit 
-static-vlan 75 
-vlan 75 
-   name "17x.x4.75.0/24 CS-InfoLab" 
-   no ip address 
-   exit 
-static-vlan 76 
-vlan 76 
-   name "17x.x4.76.0/24 CS-roaming" 
-   no ip address 
-   exit 
-static-vlan 77 
-vlan 77 
-   name "17x.x4.77.0/24 CS-Graphics" 
-   no ip address 
-   exit 
-static-vlan 78 
-vlan 78 
-   name "OLD CS-Theory" 
-   no ip address 
-   exit 
-static-vlan 478
-vlan 478 
-   name "17x.x4.78.0/24 CS-Theory" 
-   no ip address 
-   exit 
-static-vlan 79 
-vlan 79 
-   name "OLD CS-Cheriton" 
-   no ip address 
-   exit 
-static-vlan 479
-vlan 479 
-   name "17x.x4.79.0/24 CS-Cheriton" 
-   no ip address 
-   exit 
-no vlan 80 
-static-vlan 88 
-vlan 88 
-   name "17x.x4.88.0/24 EE-admin" 
-   no ip address 
-   exit 
-static-vlan 89 
-vlan 89 
-   name "17x.x4.89.0/24 EE-classrooms" 
-   no ip address 
-   exit 
-static-vlan 90 
-vlan 90 
-   name "17x.x4.90.0/24 EE-starlab" 
-   no ip address 
-   exit 
-no vlan 91
-static-vlan 92 
-vlan 92 
-   name "17x.x4.92.0/24 EE-isl" 
-   no ip address 
-   exit 
-no vlan 93
-static-vlan 94 
-vlan 94 
-   name "OLD EE-misc" 
-   no ip address 
-   exit 
-static-vlan 553 
-vlan 553 
-   name "17x.x4.94.0/24 EE-misc" 
-   no ip address 
-   exit 
-no vlan 95
-static-vlan 96 
-vlan 96 
-   name "17x.x4.96.0/23 CIS-ext" 
-   no ip address 
-   exit 
-no vlan 97 
-static-vlan 98 
-vlan 98 
-   name "17x.x4.98.0/24 CIS-video" 
-   no ip address 
-   exit 
-static-vlan 99 
-vlan 99 
-   name "OLD CIS-ext2" 
-   no ip address 
-   exit 
-static-vlan 593 
-vlan 593 
-   name "17x.x4.98.0/24 CIS-ext2" 
-   no ip address 
-   exit 
-static-vlan 100 
-vlan 100 
-   name "17x.x4.100.0/23 CIS"
-   no ip address 
-   exit 
-static-vlan 112
-vlan 112 
-   name "OLD CS-McKeownFW"
-   no ip address 
-   exit 
-static-vlan 657
-vlan 657 
-   name "171.64.74.0/23 CS-McKeownFW"
-   no ip address 
-   exit 
-static-vlan 201 
-vlan 201 
-   name "OLD of-public"
-   no ip addres
+conf t
+static-vlan 132
+vlan 132
+   name "10.22.64.0/23 Stanford_Wireless"
    exit
-static-vlan 816 
-vlan 816 
-   name "171.66.4.128/29 of-public"
-   no ip addres
+static-vlan 973
+vlan 973
+   name "RamCloud_Mazieres"
    exit
-static-vlan 202 
-vlan 202 
-   name "OLD of-private"
-   no ip addres
+static-vlan 1295
+vlan 1295
+   name "Gates_VOIP"
    exit
-static-vlan 833 
-vlan 833 
-   name "172.26.4.128/29 of-private"
-   no ip addres
+static-vlan 3800
+vlan 3800
+   name "171.64.100.0/23 CIS"
    exit
-static-vlan 291 
-vlan 291 
-   name "17x.x4.15. CS-myths" 
-   no ip address 
-   exit 
-static-vlan 364 
-vlan 364 
-   name "17x.x7.64.0/24 CS-staff" 
-   no ip address 
-   exit 
-static-vlan 365 
-vlan 365 
-   name "OLD CS-infolab-exp" 
-   no ip address 
-   exit 
-static-vlan 358 
-vlan 358 
-   name "17x.x7.65.0/24 CS-infolab-exp" 
-   no ip address 
-   exit 
-static-vlan 366 
-vlan 366 
-   name "17x.x7.66.0/24 CS-VICCI" 
-   no ip address 
-   exit 
-static-vlan 367 
-vlan 367 
-   name "17x.x7.67.0/24" 
-   no ip address 
-   exit 
-static-vlan 368 
-vlan 368 
-   name "OLD 17x.x7.68.0/24" 
-   no ip address 
-   exit 
-static-vlan 363 
-vlan 363 
-   name "17x.x7.68.0/24" 
-   no ip address 
-   exit 
-static-vlan 369 
-vlan 369 
-   name "OLD CS-openflow" 
-   no ip address 
-   exit 
-static-vlan 373 
-vlan 373 
-   name "17x.x7.69.0/24 CS-openflow" 
-   no ip address 
-   exit 
-static-vlan 370 
-vlan 370 
-   name "OLD 17x.x7.70.0/24" 
-   no ip address 
-   exit 
-static-vlan 375 
-vlan 375 
-   name "17x.x7.70.0/24" 
-   no ip address 
-   exit 
-static-vlan 371 
-vlan 371 
-   name "17x.x7.71.0/24" 
-   no ip address 
-   exit 
-static-vlan 372 
-vlan 372 
-   name "17x.x7.72.0/23 CS-CSL" 
-   no ip address 
-   exit 
-static-vlan 374 
-vlan 374 
-   name "17x.x7.74.0/23 CS-McKeown" 
-   no ip address 
-   exit 
-static-vlan 376 
-vlan 376 
-   name "OLD CS-GraphicsHCI" 
-   no ip address 
-   exit 
-static-vlan 377 
-vlan 377 
-   name "17x.x7.76.0/23 CS-GraphicsHCI" 
-   no ip address 
-   exit 
-static-vlan 378 
-vlan 378 
-   name "17x.x7.78.0/23" 
-   no ip address 
-   exit 
-static-vlan 570 
-vlan 570 
-   name "OLD VOIP" 
-   voice 
-   no ip address 
-   exit 
-static-vlan 578 
-vlan 578 
-   name "Gates VOIP" 
-   voice 
-   no ip address 
-   exit 
-static-vlan 595 
-vlan 595 
-   name "171.64.95.0/24 EE-internet2" 
-   no ip address 
-   exit 
-static-vlan 632 
-vlan 632 
-   name "OLD YOZ-wireless" 
-   no ip address 
-   exit 
-static-vlan 132 
-vlan 132 
-   name "YOZ-wireless" 
-   no ip address 
-   exit 
-static-vlan 820 
-vlan 820 
-   name "OLD VLAN820" 
-   no ip address 
-   exit 
-static-vlan 838 
-vlan 838 
-   name "VLAN838 was 820" 
-   no ip address 
-   exit 
-static-vlan 888 
-vlan 888 
-   name "192.168.252.0/24 monitor net" 
-   no ip address 
-   exit 
-static-vlan 898 
-vlan 898 
-   name "192.168.136.0/23 CS-hoxa" 
-   no ip address 
-   exit 
-static-vlan 892 
-vlan 892 
-   name "OLD Gates-SERV" 
-   no ip address 
-   exit 
-static-vlan 882 
-vlan 882 
-   name "171.66.2.16/29 Gates-SERV" 
-   no ip address 
-   exit 
-static-vlan 900 
-vlan 900 
-   name "OLD 10.79.0" 
-   no ip address 
-   exit 
-static-vlan 885 
-vlan 885 
-   name "10.79.0.0/24" 
-   no ip address 
-   exit 
-static-vlan 901 
-vlan 901 
-   name "OLD CS-cleanslate" 
-   no ip address 
-   exit 
-static-vlan 889 
-vlan 889 
-   name "10.79.1.0/24 CS-cleanslate" 
-   no ip address 
-   exit 
-static-vlan 902 
-vlan 902 
-   name "10.79.2.0/24 CS-cleanslate" 
-   no ip address 
-   exit 
-static-vlan 903 
-vlan 903 
-   name "10.79.3.0/24 CS-RAMCloud" 
-   no ip address 
-   exit 
-static-vlan 904 
-vlan 904 
-   name "10.79.4.0/24" 
-   no ip address 
-   exit 
-static-vlan 905 
-vlan 905 
-   name "10.79.5.0/24" 
-   no ip address 
-   exit 
-static-vlan 906 
-vlan 906 
-   name "10.79.6.0/24 EE-Kozyrakis" 
-   no ip address 
-   exit 
-static-vlan 907 
-vlan 907 
-   name "10.79.7.0/24" 
-   no ip address 
-   exit 
-static-vlan 908 
-vlan 908 
-   name "10.79.8.0/24" 
-   no ip address 
-   exit 
-static-vlan 909 
-vlan 909 
-   name "10.79.9.0/24" 
-   no ip address 
-   exit 
-static-vlan 910 
-vlan 910 
-   name "OLD CS-iscsi" 
-   no ip address 
-   jumbo 
-   exit 
-static-vlan 896 
-vlan 896 
-   name "10.79.10.0/24 CS-iscsi" 
-   no ip address 
-   jumbo 
-   exit 
-static-vlan 911 
-vlan 911 
-   name "OLD CS-vmotion" 
-   no ip address 
-   exit 
-static-vlan 951 
-vlan 951 
-   name "10.79.11.0/24 CS-vmotion" 
-   no ip address 
-   exit 
-static-vlan 912 
-vlan 912 
-   name "10.79.12.0/24 CS-scail" 
-   no ip address 
-   exit 
-static-vlan 913 
-vlan 913 
-   name "10.79.13.0/24" 
-   no ip address 
-   exit 
-static-vlan 914 
-vlan 914 
-   name "10.79.14.0/24" 
-   no ip address 
-   exit 
-static-vlan 915 
-vlan 915 
-   name "10.79.15.0/24" 
-   no ip address 
-   exit 
-static-vlan 916 
-vlan 916 
-   name "OLD 10.79.16.0/24" 
-   no ip address 
-   exit 
-static-vlan 954 
-vlan 954 
-   name "10.79.16.0/24" 
-   no ip address 
-   exit 
-static-vlan 917 
-vlan 917 
-   name "10.79.17.0/24" 
-   no ip address 
-   exit 
-static-vlan 918 
-vlan 918 
-   name "OLD 10.79.18.0/24" 
-   no ip address 
-   exit 
-static-vlan 944 
-vlan 944 
-   name "10.79.18.0/24" 
-   no ip address 
-   exit 
-static-vlan 919 
-vlan 919 
-   name "10.79.19.0/24" 
-   no ip address 
-   exit 
-static-vlan 920 
-vlan 920 
-   name "10.79.20.0/24 CS-ipmi" 
-   no ip address 
-   exit 
-static-vlan 991 
-vlan 991 
-   name "10.79.20.0/24 CS-ipmi" 
-   no ip address 
-   exit 
-static-vlan 921 
-vlan 921 
-   name "10.79.21.0/24 CS-ipmi2" 
-   no ip address 
-   exit 
-static-vlan 922 
-vlan 922 
-   name "10.79.22.0/24" 
-   no ip address 
-   exit 
-static-vlan 923 
-vlan 923 
-   name "10.79.23.0/24" 
-   no ip address 
-   exit 
-static-vlan 924 
-vlan 924 
-   name "10.79.24.0/24" 
-   no ip address 
-   exit 
-static-vlan 925 
-vlan 925 
-   name "10.79.25.0/24" 
-   no ip address 
-   exit 
-static-vlan 926 
-vlan 926 
-   name "10.79.26.0/24" 
-   no ip address 
-   exit 
-static-vlan 927 
-vlan 927 
-   name "10.79.27.0/24" 
-   no ip address 
-   exit 
-static-vlan 928 
-vlan 928 
-   name "10.79.28.0/24" 
-   no ip address 
-   exit 
-static-vlan 929 
-vlan 929 
-   name "10.79.29.0/24" 
-   no ip address 
-   exit 
-static-vlan 930 
-vlan 930 
-   name "10.79.30.0/24" 
-   no ip address 
-   exit 
-static-vlan 931 
-vlan 931 
-   name "OLD 10.79.31.0/24" 
-   no ip address 
-   exit 
-static-vlan 939 
-vlan 939 
-   name "10.79.31.0/24" 
-   no ip address 
-   exit 
+static-vlan 3801
+vlan 3801
+   name "171.66.2.16/29 External"
+   exit
+static-vlan 3802
+vlan 3802
+   name "? Mazieres"
+   exit
+static-vlan 3803
+vlan 3803
+   name "171.64.15.0/27 Myth"
+   exit
+static-vlan 3804
+vlan 3804
+   name "171.67.64.0/24 Gates_Staff"
+   exit
+static-vlan 3805
+vlan 3805
+   name "171.67.65.0/24 InfoLab_Exp"
+   exit
+static-vlan 3806
+vlan 3806
+   name "171.67.66.0/24 VICCI_Cluster"
+   exit
+static-vlan 3807
+vlan 3807
+   name "171.67.67.0/24 "
+   exit
+static-vlan 3808
+vlan 3808
+   name "171.67.68.0/24 "
+   exit
+static-vlan 3809
+vlan 3809
+   name "171.67.69.0/24 OpenFlow"
+   exit
+static-vlan 3810
+vlan 3810
+   name "171.67.70.0/24 "
+   exit
+static-vlan 3811
+vlan 3811
+   name "171.67.71.0/24 "
+   exit
+static-vlan 3812
+vlan 3812
+   name "171.67.72.0/23 CSL_2"
+   exit
+static-vlan 3814
+vlan 3814
+   name "171.67.74.0/23  McKeown_Exp"
+   exit
+static-vlan 3816
+vlan 3816
+   name "171.67.76.0/23 Graphics_2"
+   exit
+static-vlan 3818
+vlan 3818
+   name "171.67.78.0/23 "
+   exit
+static-vlan 3820
+vlan 3820
+   name "10.79.0.0/24 "
+   exit
+static-vlan 3821
+vlan 3821
+   name "10.79.1.0/24 Clean_Slate_1"
+   exit
+static-vlan 3822
+vlan 3822
+   name "10.79.2.0/24 Clean_Slate_2"
+   exit
+static-vlan 3823
+vlan 3823
+   name "10.79.3.0/24 RAMCloud"
+   exit
+static-vlan 3824
+vlan 3824
+   name "10.79.4.0/24 "
+   exit
+static-vlan 3825
+vlan 3825
+   name "10.79.5.0/24 NNIN_Cluster"
+   exit
+static-vlan 3826
+vlan 3826
+   name "10.79.6.0/24 Kozyrakis_Cluster"
+   exit
+static-vlan 3827
+vlan 3827
+   name "10.79.7.0/24 "
+   exit
+static-vlan 3828
+vlan 3828
+   name "10.79.8.0/24 "
+   exit
+static-vlan 3829
+vlan 3829
+   name "10.79.9.0/24 "
+   exit
+static-vlan 3830
+vlan 3830
+   name "10.79.10.0/24 CS_iSCSI"
+   exit
+static-vlan 3831
+vlan 3831
+   name "10.79.11.0/24 CS_Vmotion"
+   exit
+static-vlan 3832
+vlan 3832
+   name "10.79.12.0/24 SCAIL_Cluster"
+   exit
+static-vlan 3833
+vlan 3833
+   name "10.79.13.0/24 "
+   exit
+static-vlan 3834
+vlan 3834
+   name "10.79.14.0/24 "
+   exit
+static-vlan 3835
+vlan 3835
+   name "10.79.15.0/24 InfoLab_Cluster"
+   exit
+static-vlan 3836
+vlan 3836
+   name "10.79.16.0/24 "
+   exit
+static-vlan 3837
+vlan 3837
+   name "10.79.17.0/24 "
+   exit
+static-vlan 3838
+vlan 3838
+   name "10.79.18.0/24 "
+   exit
+static-vlan 3839
+vlan 3839
+   name "10.79.19.0/24 "
+   exit
+static-vlan 3840
+vlan 3840
+   name "10.79.20.0/24 CS_IPMI_1"
+   exit
+static-vlan 3841
+vlan 3841
+   name "10.79.21.0/24 CS_IPMI_2"
+   exit
+static-vlan 3842
+vlan 3842
+   name "10.79.22.0/24 "
+   exit
+static-vlan 3843
+vlan 3843
+   name "10.79.23.0/24 "
+   exit
+static-vlan 3844
+vlan 3844
+   name "10.79.24.0/24 "
+   exit
+static-vlan 3845
+vlan 3845
+   name "10.79.25.0/24 "
+   exit
+static-vlan 3846
+vlan 3846
+   name "10.79.26.0/24 "
+   exit
+static-vlan 3847
+vlan 3847
+   name "10.79.27.0/24 "
+   exit
+static-vlan 3848
+vlan 3848
+   name "10.79.28.0/24 "
+   exit
+static-vlan 3849
+vlan 3849
+   name "10.79.29.0/24 "
+   exit
+static-vlan 3850
+vlan 3850
+   name "10.79.30.0/24 "
+   exit
+static-vlan 3851
+vlan 3851
+   name "10.79.31.0/24 "
+   exit
+static-vlan 3852
+vlan 3852
+   name "192.168.252.0/24 Net_Monitor"
+   exit
+static-vlan 3853
+vlan 3853
+   name "192.168.136.0/23 HOXA_Cluster"
+   exit
+static-vlan 3854
+vlan 3854
+   name "?"
+   exit
+static-vlan 3864
+vlan 3864
+   name "171.64.64.0/24 CS"
+   exit
+static-vlan 3865
+vlan 3865
+   name "171.64.65.0/24 CF_Clients"
+   exit
+static-vlan 3866
+vlan 3866
+   name "171.64.66.0/24 CS_Classrooms"
+   exit
+static-vlan 3867
+vlan 3867
+   name "171.64.67.0/24 CS_Unsupported"
+   exit
+static-vlan 3868
+vlan 3868
+   name "171.64.68.0/23 SAIL"
+   exit
+static-vlan 3870
+vlan 3870
+   name "171.64.70.0/24 Gates_Net"
+   exit
+static-vlan 3871
+vlan 3871
+   name "171.64.71.0/24 KSL"
+   exit
+static-vlan 3872
+vlan 3872
+   name "171.64.72.0/23 CSL_1"
+   exit
+static-vlan 3874
+vlan 3874
+   name "171.64.74.0/24 McKeown_Tobagi"
+   exit
+static-vlan 3875
+vlan 3875
+   name "171.64.75.0/24 InfoLab"
+   exit
+static-vlan 3876
+vlan 3876
+   name "171.64.76.0/24 Campus_Roaming"
+   exit
+static-vlan 3877
+vlan 3877
+   name "171.64.77.0/24 Graphics_1"
+   exit
+static-vlan 3878
+vlan 3878
+   name "171.64.78.0/24 Theory"
+   exit
+static-vlan 3879
+vlan 3879
+   name "171.64.79.0/24 Cheriton"
+   exit
+static-vlan 3880
+vlan 3880
+   name "171.64.80.0/24 unused"
+   exit
+static-vlan 3881
+vlan 3881
+   name "192.168.27.0/24"
+   exit
+static-vlan 3888
+vlan 3888
+   name "171.64.88.0/24 pe-admin-net"
+   exit
+static-vlan 3889
+vlan 3889
+   name "171.64.89.0/24 pe-classroom-net"
+   exit
+static-vlan 3890
+vlan 3890
+   name "171.64.90.0/23 pe-starlab-net"
+   exit
+static-vlan 3892
+vlan 3892
+   name "171.64.92.0/23 pe-isl-net"
+   exit
+static-vlan 3894
+vlan 3894
+   name "171.64.94.0/24 pe-miscnet"
+   exit
+static-vlan 3895
+vlan 3895
+   name "171.64.95.0/24 ee-openflow"
+   exit
+static-vlan 3896
+vlan 3896
+   name "171.64.96.0/23 CIS-Ext96-net"
+   exit
+static-vlan 3898
+vlan 3898
+   name "171.64.98.0/24 EE_Management"
+   exit
+static-vlan 3899
+vlan 3899
+   name "171.64.99.0/24 CIS_Ext_2"
+   exit
 exit
 wr mem

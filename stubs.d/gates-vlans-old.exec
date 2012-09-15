@@ -1,42 +1,21 @@
-config 
-no vlan 483 
-no vlan 478 
-no vlan 479 
-no vlan 91
-no vlan 93
-no vlan 553 
-no vlan 97 
-no vlan 593 
-no vlan 657 
-no vlan 816 
-no vlan 833 
-no vlan 358 
-no vlan 363 
-no vlan 367 
-no vlan 368 
-no vlan 373 
-no vlan 375 
-no vlan 578 
-no vlan 838 
-no vlan 882 
-no vlan 885 
-no vlan 889 
-no vlan 896 
-
-no vlan 900
-no vlan 904
-no vlan 907
-no vlan 908
-no vlan 909
-
-no vlan 913
-no vlan 914
-
-no vlan 916
-no vlan 917
+conf t
+no vlan 65
+no vlan 67
+no vlan 94
+no vlan 99
+no vlan 364
+no vlan 376
+no vlan 873
+no vlan 898
+no vlan 901
+no vlan 902
+no vlan 903
+no vlan 912
+no vlan 915
 no vlan 918
 no vlan 919
-
+no vlan 920
+no vlan 921
 no vlan 922
 no vlan 923
 no vlan 924
@@ -47,13 +26,4 @@ no vlan 928
 no vlan 929
 no vlan 930
 no vlan 931
-
-no vlan 951 
-no vlan 954 
-no vlan 944 
-no vlan 991 
-no vlan 939 
-
-
 exit
-wr mem
