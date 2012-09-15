@@ -1,0 +1,5 @@
+#!/bin/bash
+# Turn a list of vlan/name pairs into a runable HP config stub
+VLAN_LIST=$1
+
+cat $VLAN_LIST | perl -spi -e 's/^([0-9]*)\s+(.*)/static-vlan $1\nvlan $1\n   name "$2"\n   exit/g'
