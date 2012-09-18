@@ -28,3 +28,4 @@ no vlan 929
 no vlan 930
 no vlan 931
 exit
+wr mem
