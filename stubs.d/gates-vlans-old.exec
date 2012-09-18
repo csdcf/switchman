@@ -1,4 +1,5 @@
 conf t
+no vlan 570
 no vlan 65
 no vlan 67
 no vlan 94

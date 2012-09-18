@@ -16,7 +16,7 @@ vlan 3804
    exit 
 static-vlan 3816
 vlan 3816 
-   untagged A1-A3,A5-A6,A8-A19,A22,A24,B1-B3,B5-B12,C3,C16,C24 
+   untagged A1-A3,A5-A6,A8-A19,A22,A24,B1-B3,B5-B12,C3,C5,C16,C24 
    tagged B20-B21,B24 
    exit 
 static-vlan 3802

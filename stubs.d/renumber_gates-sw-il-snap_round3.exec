@@ -13,7 +13,7 @@ static-vlan 3823
 static-vlan 3832
 static-vlan 3835
 vlan 3835 
-   untagged 1-40 
+   untagged 1-38,40 
    exit 
 static-vlan 3838
 static-vlan 3839
