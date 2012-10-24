@@ -11,8 +11,8 @@ access-list 165 permit ip 172.24.65.0 0.0.0.255 171.64.65.0 0.0.0.255
 access-list 165 remark CSDCF: Allow in CS nets
 access-list 165 permit ip 171.64.64.0 0.0.0.255 any
 access-list 165 permit ip 172.24.64.0 0.0.0.255 any
-access-list 165 remark CSDCF: Allow D303-ASA5520 (171.64.115.10) access to
-access-list 165 remark CSDCF: some ports on scpdgatesb01-03/-04 (171.64.65.163/164)
+access-list 165 remark CSDCF: Allow 171.64.115.10 access to
+access-list 165 remark CSDCF: 171.64.65.163/164
 access-list 165 permit tcp 171.64.115.10 171.64.65.163 eq www
 access-list 165 permit tcp 171.64.115.10 171.64.65.163 eq 443
 access-list 165 permit tcp 171.64.115.10 171.64.65.163 range 41790 41795
@@ -21,10 +21,10 @@ access-list 165 permit tcp 171.64.115.10 171.64.65.164 eq www
 access-list 165 permit tcp 171.64.115.10 171.64.65.164 eq 443
 access-list 165 permit tcp 171.64.115.10 171.64.65.164 range 41790 41795
 access-list 165 permit udp 171.64.115.10 171.64.65.164 range 41790 41795
-access-list 165 deny   tcp  any 171.64.65.163 any
-access-list 165 deny   udp  any 171.64.65.163 any
-access-list 165 deny   tcp  any 171.64.65.164 any
-access-list 165 deny   udp  any 171.64.65.164 any
+access-list 165 deny   tcp  any 171.64.65.163
+access-list 165 deny   udp  any 171.64.65.163
+access-list 165 deny   tcp  any 171.64.65.164
+access-list 165 deny   udp  any 171.64.65.164
 access-list 165 permit ip any any
 # access-list 165 permit tcp any any eq ident
 # access-list 165 remark CSDCF: allow wordgames
