@@ -24,10 +24,10 @@ access-list 165 permit udp 171.64.115.10 171.64.65.164 range 41790 41795
 access-list 165 deny   ip  any 171.64.65.163
 access-list 165 deny   ip  any 171.64.65.164
 access-list 165 permit ip any any
-access-list 165 permit tcp any any eq ident
-access-list 165 remark CSDCF: allow wordgames
-access-list 165 deny   tcp any any
-access-list 165 permit ip any any
+# access-list 165 permit tcp any any eq ident
+# access-list 165 remark CSDCF: allow wordgames
+# access-list 165 deny   tcp any any
+# access-list 165 permit ip any any
 exit
 wr mem
 ! vim:syn=ios
