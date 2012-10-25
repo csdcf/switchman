@@ -22,7 +22,11 @@ access-list 165 permit tcp host 171.64.115.10 host 171.64.65.164 eq 443
 access-list 165 permit tcp host 171.64.115.10 host 171.64.65.164 range 41790 41795
 access-list 165 permit udp host 171.64.115.10 host 171.64.65.164 range 41790 41795
 access-list 165 deny   ip  any host 171.64.65.163
+access-list 165 deny   tcp any host 171.64.65.163
+access-list 165 deny   udp any host 171.64.65.163
 access-list 165 deny   ip  any host 171.64.65.164
+access-list 165 deny   tcp any host 171.64.65.164
+access-list 165 deny   udp any host 171.64.65.164
 access-list 165 permit ip any any
 exit
 wr mem
