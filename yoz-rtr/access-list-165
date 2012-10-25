@@ -5,9 +5,6 @@ access-list 165 remark CSDCF: ACL for Misc Net, vlan 65
 access-list 165 remark $Id: access-list-165,v 1.0 2012/10/24 bjr
 access-list 165 remark ###################################################
 access-list 165 permit tcp any any established
-access-list 165 remark CSDCF: private to public and back
-access-list 165 permit ip 171.64.65.0 0.0.0.255 172.24.65.0 0.0.0.255
-access-list 165 permit ip 172.24.65.0 0.0.0.255 171.64.65.0 0.0.0.255
 access-list 165 remark CSDCF: Allow in CS nets
 access-list 165 permit ip 171.64.64.0 0.0.0.255 any
 access-list 165 permit ip 172.24.64.0 0.0.0.255 any
@@ -22,11 +19,7 @@ access-list 165 permit tcp host 171.64.115.10 host 171.64.65.164 eq 443
 access-list 165 permit tcp host 171.64.115.10 host 171.64.65.164 range 41790 41795
 access-list 165 permit udp host 171.64.115.10 host 171.64.65.164 range 41790 41795
 access-list 165 deny   ip  any host 171.64.65.163
-access-list 165 deny   tcp any host 171.64.65.163
-access-list 165 deny   udp any host 171.64.65.163
 access-list 165 deny   ip  any host 171.64.65.164
-access-list 165 deny   tcp any host 171.64.65.164
-access-list 165 deny   udp any host 171.64.65.164
 access-list 165 permit ip any any
 exit
 wr mem
