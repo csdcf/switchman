@@ -1,0 +1,15 @@
+config
+spanning-tree A1-A24 loop-guard
+spanning-tree B1-B20 loop-guard
+spanning-tree C1-C24 loop-guard
+spanning-tree D1-D24 loop-guard
+spanning-tree E1-E24 loop-guard
+spanning-tree F1-F24 loop-guard
+spanning-tree G1-G24 loop-guard
+spanning-tree H1-H24 loop-guard
+spanning-tree I1-I24 loop-guard
+spanning-tree J1-J24 loop-guard
+spanning-tree K1-K24 loop-guard
+spanning-tree L1-L24 loop-guard
+exit
+wr mem

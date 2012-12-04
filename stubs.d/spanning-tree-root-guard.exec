@@ -1,0 +1,15 @@
+config
+spanning-tree A1-A24 root-guard
+spanning-tree B1-B20 root-guard
+spanning-tree C1-C24 root-guard
+spanning-tree D1-D24 root-guard
+spanning-tree E1-E24 root-guard
+spanning-tree F1-F24 root-guard
+spanning-tree G1-G24 root-guard
+spanning-tree H1-H24 root-guard
+spanning-tree I1-I24 root-guard
+spanning-tree J1-J24 root-guard
+spanning-tree K1-K24 root-guard
+spanning-tree L1-L24 root-guard
+exit
+wr mem
