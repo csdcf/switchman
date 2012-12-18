@@ -88,6 +88,9 @@ access-list 168 permit tcp any host 171.64.68.30 eq www
 access-list 168 remark CSDCF: grahamnum, for apml and thrun
 access-list 168 permit tcp any host 171.64.68.32 eq www
 access-list 168 permit tcp any host 171.64.68.32 eq 222
+access-list 168 remark CSDCF: prodigy, Balaji Srinivasan
+access-list 168 permit tcp any host 171.64.68.93 eq www
+access-list 168 permit tcp any host 171.64.68.93 eq 443
 access-list 168 remark CSDCF: radiant,nicu  mstsc, for ssaria
 access-list 168 permit tcp any host 172.24.68.96 eq 3389
 access-list 168 permit tcp any host 171.64.68.21 eq 3389

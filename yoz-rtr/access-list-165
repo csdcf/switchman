@@ -20,6 +20,23 @@ access-list 165 permit tcp host 171.64.115.10 host 171.64.65.164 range 41790 417
 access-list 165 permit udp host 171.64.115.10 host 171.64.65.164 range 41790 41795
 access-list 165 deny   ip  any host 171.64.65.163
 access-list 165 deny   ip  any host 171.64.65.164
+access-list 165 remark CSDCF: fah-web (vapg6-vz14) (Folding@Home)
+access-list 165 remark CSDCF: fah-web: web access from anywhere
+access-list 165 permit tcp any host 171.64.65.142 eq www
+access-list 165 permit tcp any host 171.64.65.142 eq 443
+access-list 165 remark CSDCF: fah-web: allow any Stanford host
+access-list 165 permit ip 171.64.0.0 0.0.255.255 host 171.64.65.142
+access-list 165 permit ip 172.24.0.0 0.0.255.255 host 171.64.65.142
+access-list 165 permit ip 171.65.0.0 0.0.255.255 host 171.64.65.142
+access-list 165 permit ip 172.25.0.0 0.0.255.255 host 171.64.65.142
+access-list 165 permit ip 171.66.0.0 0.0.255.255 host 171.64.65.142
+access-list 165 permit ip 172.26.0.0 0.0.255.255 host 171.64.65.142
+access-list 165 permit ip 171.67.0.0 0.0.255.255 host 171.64.65.142
+access-list 165 permit ip 172.27.0.0 0.0.255.255 host 171.64.65.142
+access-list 165 permit ip 10.30.0.0  0.0.15.255  host 171.64.65.142
+access-list 165 permit ip 10.31.0.0  0.0.15.255  host 171.64.65.142
+access-list 165 permit ip 10.32.0.0  0.0.1.255   host 171.64.65.142
+access-list 165 deny   ip  any host 171.64.65.142
 access-list 165 permit ip any any
 exit
 wr mem
