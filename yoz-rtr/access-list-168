@@ -46,6 +46,10 @@ access-list 168 permit tcp any host 171.64.68.38 eq 443
 access-list 168 remark CSDCF: open www on mustela
 access-list 168 permit tcp any host 171.64.69.99 eq 80
 access-list 168 permit tcp any host 171.64.69.99 eq 443
+access-list 168 remark CSDCF: open www and ssh on berkeley (Berkeley Churchill)
+access-list 168 permit tcp any host 171.64.69.103 eq 22
+access-list 168 permit tcp any host 171.64.69.103 eq 80
+access-list 168 permit tcp any host 171.64.69.103 eq 443
 access-list 168 remark CSDCF: Bejerano host hoxa
 access-list 168 permit tcp any host 171.64.68.40 eq 22
 access-list 168 remark CSDCF: Batzoglou host bug
