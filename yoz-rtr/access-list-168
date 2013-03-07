@@ -140,6 +140,9 @@ access-list 168 permit tcp any host 171.64.68.121 eq www
 access-list 168 remark CSDCF: ssh/sftp on lysander (Samir Menon)
 access-list 168 permit tcp any host 172.24.68.46 eq 22
 access-list 168 permit tcp any host 172.24.68.46 eq 115
+access-list 168 remark CSDCF: http(s) on drivingtmp (rebsamen)
+access-list 168 permit tcp any host 172.24.68.24 eq www
+access-list 168 permit tcp any host 172.24.68.24 eq 443
 access-list 168 remark CSDCF: web access to bully (Torsten Kroeger)
 access-list 168 permit tcp any host 171.64.68.44 eq www
 access-list 168 permit tcp any host 171.64.68.44 eq 443
