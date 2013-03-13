@@ -4,6 +4,11 @@ vlan 3868
    untagged A21,C13 
    tagged B18 
    exit 
+static-vlan 3871
+vlan 3871 
+   untagged A3,A9,A13-A14 
+   tagged B18 
+   exit 
 static-vlan 3879
 vlan 3879 
    exit 

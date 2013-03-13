@@ -1,31 +1,7 @@
 conf t
-no vlan 570
-no vlan 65
-no vlan 67
-no vlan 94
-no vlan 99
-no vlan 364
-no vlan 376
-no vlan 873
-no vlan 898
-no vlan 901
-no vlan 902
-no vlan 903
-no vlan 912
-no vlan 915
-no vlan 918
-no vlan 919
-no vlan 920
-no vlan 921
-no vlan 922
-no vlan 923
-no vlan 924
-no vlan 925
-no vlan 926
-no vlan 927
-no vlan 928
-no vlan 929
-no vlan 930
-no vlan 931
+no vlan 88
+no vlan 89
+no vlan 96
+no vlan 100
 exit
 wr mem

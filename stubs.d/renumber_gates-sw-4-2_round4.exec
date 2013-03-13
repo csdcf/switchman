@@ -3,6 +3,10 @@ static-vlan 3868
 vlan 3868 
    tagged B18,B20 
    exit 
+static-vlan 3871
+vlan 3871 
+   tagged B18,B20 
+   exit 
 static-vlan 3879
 vlan 3879 
    exit 

@@ -3,6 +3,10 @@ static-vlan 3868
 vlan 3868 
    untagged B3-B5,B9 
    exit 
+static-vlan 3871
+vlan 3871 
+   untagged B10-B11,B15 
+   exit 
 static-vlan 3879
 static-vlan 3809
 static-vlan 3852
