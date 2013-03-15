@@ -144,7 +144,7 @@ access-list 168 remark CSDCF: http(s) on drivingtmp (rebsamen)
 access-list 168 permit tcp any host 172.24.68.24 eq www
 access-list 168 permit tcp any host 172.24.68.24 eq 443
 access-list 168 remark CSDCF: lena2:3000 for Richard Socher
-access-list 168 permit tcp any host 172.24.68.36 eq 3000
+access-list 168 permit tcp any host 172.24.69.36 eq 3000
 access-list 168 remark CSDCF: web access to bully (Torsten Kroeger)
 access-list 168 permit tcp any host 171.64.68.44 eq www
 access-list 168 permit tcp any host 171.64.68.44 eq 443
