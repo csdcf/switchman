@@ -1,0 +1,34 @@
+conf t
+static-vlan 3866
+vlan 3866 
+   untagged E5 
+   exit 
+static-vlan 3875
+vlan 3875 
+   untagged C18 
+   tagged B14,B17,B19,E22-E23 
+   exit 
+static-vlan 3876
+vlan 3876 
+   untagged A3,A5-A6,C12,C16,E9 
+   tagged B14,B17,B19 
+   exit 
+static-vlan 3877
+vlan 3877 
+   exit 
+static-vlan 3878
+vlan 3878 
+   untagged A9 
+   tagged B14,B17,B19,E22-E23 
+   exit 
+static-vlan 3805
+vlan 3805 
+   exit 
+static-vlan 3801
+vlan 3801 
+   exit 
+static-vlan 3826
+vlan 3826 
+   exit 
+exit
+wr mem
