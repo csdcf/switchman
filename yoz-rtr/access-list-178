@@ -95,9 +95,6 @@ access-list 178 remark CSDCF: Aiken/Widom DSL
 access-list 178 permit ip 171.66.183.113 0.0.0.7 any
 access-list 178 permit ip any host 171.64.78.77
 access-list 178 permit ip any host 171.64.78.20
-access-list 178 remark CSDCF: Troll-W
-access-list 178 permit tcp any host 171.64.78.21 eq 22
-access-list 178 permit tcp any host 171.64.78.21 eq 4242
 access-list 178 remark CSDCF: Aiken, for moss
 access-list 178 permit tcp any host 171.64.78.49 eq 7690
 access-list 178 permit tcp any host 171.64.78.49 eq 80
@@ -125,6 +122,8 @@ access-list 178 permit tcp any host 171.64.78.247 eq 8333
 access-list 178 permit tcp any host 171.64.78.248 eq 22
 access-list 178 permit tcp any host 171.64.78.248 eq 902
 access-list 178 permit tcp any host 171.64.78.248 eq 8333
+access-list 178 permit tcp any host 171.64.78.21 eq 22
+access-list 178 permit tcp any host 171.64.78.21 eq 4242
 access-list 178 permit tcp any host 171.64.78.21 eq 9999
 !access-list 178 permit tcp any host 171.64.78.26 eq 22
 !access-list 178 permit tcp any host 171.64.78.18 eq 22
