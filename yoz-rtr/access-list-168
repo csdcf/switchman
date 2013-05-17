@@ -153,6 +153,8 @@ access-list 168 remark CSDCF: 22,80,8080 access for trepak (Percy Liang)
 access-list 168 permit tcp any host 171.64.68.69 eq 22
 access-list 168 permit tcp any host 171.64.68.69 eq www
 access-list 168 permit tcp any host 171.64.68.69 eq 443
+access-list 168 remark CSDCF: web access to andrewng (Andrew Ng)
+access-list 168 permit tcp any host 171.64.68.98 eq www
 access-list 168 remark CSDCF: web access to bully (Torsten Kroeger)
 access-list 168 permit tcp any host 171.64.68.44 eq www
 access-list 168 permit tcp any host 171.64.68.44 eq 443
