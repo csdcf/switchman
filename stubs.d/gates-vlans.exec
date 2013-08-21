@@ -1,6 +1,10 @@
 conf t
-static-vlan 132
-vlan 132
+static-vlan 18
+vlan 18
+   name "OpenFlow"
+   exit
+static-vlan 1959
+vlan 1959
    name "10.22.64.0/23 Stanford_Wireless"
    exit
 static-vlan 973
@@ -21,7 +25,7 @@ vlan 3801
    exit
 static-vlan 3802
 vlan 3802
-   name "? Mazieres"
+   name "171.66.3.0/24 Mazieres"
    exit
 static-vlan 3803
 vlan 3803
@@ -37,15 +41,15 @@ vlan 3805
    exit
 static-vlan 3806
 vlan 3806
-   name "171.67.66.0/24 VICCI_Cluster"
+   name "171.67.66.0/24 unassigned"
    exit
 static-vlan 3807
 vlan 3807
-   name "171.67.67.0/24 "
+   name "171.67.67.0/24 unassigned"
    exit
 static-vlan 3808
 vlan 3808
-   name "171.67.68.0/24 "
+   name "171.67.68.0/24 unassigned"
    exit
 static-vlan 3809
 vlan 3809
@@ -53,27 +57,43 @@ vlan 3809
    exit
 static-vlan 3810
 vlan 3810
-   name "171.67.70.0/24 "
+   name "171.67.70.0/24 unassigned"
    exit
 static-vlan 3811
 vlan 3811
-   name "171.67.71.0/24 "
+   name "171.67.71.0/24 unassigned"
    exit
 static-vlan 3812
 vlan 3812
    name "171.67.72.0/23 CSL_2"
    exit
+static-vlan 3813
+vlan 3813
+   name "EE OpenStack Priv"
+   exit
 static-vlan 3814
 vlan 3814
    name "171.67.74.0/23  McKeown_Exp"
+   exit
+static-vlan 3815
+vlan 3815
+   name "unassigned"
    exit
 static-vlan 3816
 vlan 3816
    name "171.67.76.0/23 Graphics_2"
    exit
+static-vlan 3817
+vlan 3817
+   name "unassigned"
+   exit
 static-vlan 3818
 vlan 3818
    name "171.67.78.0/23 "
+   exit
+static-vlan 3819
+vlan 3819
+   name "unassigned"
    exit
 static-vlan 3820
 vlan 3820
@@ -105,7 +125,7 @@ vlan 3826
    exit
 static-vlan 3827
 vlan 3827
-   name "10.79.7.0/24 "
+   name "10.79.7.0/24 Kozyrakis_Cluster2"
    exit
 static-vlan 3828
 vlan 3828
@@ -213,7 +233,43 @@ vlan 3853
    exit
 static-vlan 3854
 vlan 3854
-   name "?"
+   name "unassigned"
+   exit
+static-vlan 3855
+vlan 3855
+   name "unassigned"
+   exit
+static-vlan 3856
+vlan 3856
+   name "unassigned"
+   exit
+static-vlan 3857
+vlan 3857
+   name "unassigned"
+   exit
+static-vlan 3858
+vlan 3858
+   name "unassigned"
+   exit
+static-vlan 3859
+vlan 3859
+   name "unassigned"
+   exit
+static-vlan 3860
+vlan 3860
+   name "unassigned"
+   exit
+static-vlan 3861
+vlan 3861
+   name "unassigned"
+   exit
+static-vlan 3862
+vlan 3862
+   name "unassigned"
+   exit
+static-vlan 3863
+vlan 3863
+   name "unassigned"
    exit
 static-vlan 3864
 vlan 3864
@@ -235,6 +291,10 @@ static-vlan 3868
 vlan 3868
    name "171.64.68.0/23 SAIL"
    exit
+static-vlan 3869
+vlan 3869
+   name "unassigned"
+   exit
 static-vlan 3870
 vlan 3870
    name "171.64.70.0/24 Gates_Net"
@@ -246,6 +306,10 @@ vlan 3871
 static-vlan 3872
 vlan 3872
    name "171.64.72.0/23 CSL_1"
+   exit
+static-vlan 3873
+vlan 3873
+   name "unassigned"
    exit
 static-vlan 3874
 vlan 3874
@@ -273,11 +337,35 @@ vlan 3879
    exit
 static-vlan 3880
 vlan 3880
-   name "171.64.80.0/24 unused"
+   name "171.64.80.0/24 "
    exit
 static-vlan 3881
 vlan 3881
    name "192.168.27.0/24"
+   exit
+static-vlan 3882
+vlan 3882
+   name "unassigned"
+   exit
+static-vlan 3883
+vlan 3883
+   name "unassigned"
+   exit
+static-vlan 3884
+vlan 3884
+   name "unassigned"
+   exit
+static-vlan 3885
+vlan 3885
+   name "unassigned"
+   exit
+static-vlan 3886
+vlan 3886
+   name "unassigned"
+   exit
+static-vlan 3887
+vlan 3887
+   name "unassigned"
    exit
 static-vlan 3888
 vlan 3888
@@ -291,9 +379,17 @@ static-vlan 3890
 vlan 3890
    name "171.64.90.0/23 pe-starlab-net"
    exit
+static-vlan 3891
+vlan 3891
+   name "unassigned"
+   exit
 static-vlan 3892
 vlan 3892
    name "171.64.92.0/23 pe-isl-net"
+   exit
+static-vlan 3893
+vlan 3893
+   name "unassigned"
    exit
 static-vlan 3894
 vlan 3894
@@ -307,6 +403,10 @@ static-vlan 3896
 vlan 3896
    name "171.64.96.0/23 CIS-Ext96-net"
    exit
+static-vlan 3897
+vlan 3897
+   name "SNF-Fab"
+   exit
 static-vlan 3898
 vlan 3898
    name "171.64.98.0/24 EE_Management"
@@ -315,5 +415,5 @@ static-vlan 3899
 vlan 3899
    name "171.64.99.0/24 CIS_Ext_2"
    exit
-exit
-wr mem
+   exit
+   wr mem
