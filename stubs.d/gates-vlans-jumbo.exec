@@ -1,0 +1,6 @@
+conf t
+vlan 3830 jumbo 
+vlan 3831 jumbo 
+exit
+wr mem
+
