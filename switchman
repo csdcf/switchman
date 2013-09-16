@@ -36,22 +36,6 @@ try:
             print "Failed to save config to conf.d/%s\n" % sys.argv[2]
             exit
 
-    elif sys.argv[1] == '-r':
-        #-------------------------------------------------------------------------
-        # Save config file for switch in second arg
-        #-------------------------------------------------------------------------
-        print 'Executing: scp -q %s:/cfg/running-config conf.d/%s.conf' % (sys.argv[2], sys.argv[2])
-
-        (output, status) = pexpect.run ('scp -q %s:/cfg/running-config conf.d/%s.conf' % (sys.argv[2], sys.argv[2]), withexitstatus=1)
-
-        if status!=1:
-            print output
-            print "Successfully saved config to conf.d/%s\n" % sys.argv[2]
-        else:
-            print output
-            print "Failed to save config to conf.d/%s\n" % sys.argv[2]
-            exit
-
     # Scp software image file arg2 [primary|secondary] switch
     elif sys.argv[1] == '-o':
         print 'Executing: scp -q %s %s:/os/%s' % (sys.argv[2], sys.argv[4], sys.argv[3])
@@ -68,7 +52,7 @@ try:
 
     elif sys.argv[1] == '-k':
         #-------------------------------------------------------------------------
-        # Save config file for switch in second arg
+        # Copy SSH authorized keys to switch
         #-------------------------------------------------------------------------
         print 'Executing: scp -q gates-sw/authorized_keys_mgr %s:/ssh/mgr_keys/authorized_keys' % (sys.argv[2])
 
