@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# ROUND must be of the form OLDVLAN_NEWVLAN, one pair per line
+# ROUND file must be of the form OLDVLAN_NEWVLAN, one pair per line
 ROUND=$1
 
 RUNFILE="${ROUND}.sh"

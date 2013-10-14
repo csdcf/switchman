@@ -77,9 +77,9 @@ try:
         #-------------------------------------------------------------------------
         # Execute commands from file on switch
         #-------------------------------------------------------------------------
-        foo = pexpect.spawn('ssh %s' % sys.argv[3])
+        foo = pexpect.spawn('ssh %s' % sys.argv[3], logfile=None)
         foo.logfile = None
-        print 'exec: ssh %s' % sys.argv[3]
+        #print 'exec: ssh %s' % sys.argv[3]
 
         index = foo.expect(['.*ssword:', '#', 'Press any key'])
 
@@ -90,23 +90,29 @@ try:
 
         foo.send('\rno page\r')
         foo.expect('#')
+        foo.send('session interactive-mode disable\r')
+        foo.expect('#')
 
         foo.logfile = sys.stdout
 
         #print 'opening %s\r' % sys.argv[2]
         f = open(sys.argv[2], "r")
         cmd=f.readline()
-        time.sleep(0.1)
+        time.sleep(0.3)
         while cmd:
             #print 'read: %s' % cmd
-            #foo.logfile = None
+            foo.logfile = None
             time.sleep(0.3)
             foo.sendline(cmd.strip())
-            #foo.logfile = sys.stdout
+            foo.logfile = sys.stdout
             #print 'waiting for prompt'
             foo.expect('#',timeout=300)
+            sys.stdout.flush()
             cmd=f.readline()
 
+        time.sleep(0.3)
+        foo.sendline('\r')
+        foo.expect('#',timeout=300)
         sys.stdout.flush()
         #print 'closing %s\r' % sys.argv[2]
         f.close()
@@ -122,6 +128,7 @@ try:
         foo.sendline('y')
         foo.expect(pexpect.EOF)
         foo.close()
+        print '\r'
 
     else:
         raise
