@@ -1,0 +1,8 @@
+conf t
+static-vlan 1959
+vlan 1959 
+   forbid B16 
+   tagged B13-B14,B18-B20,B24,Trk1 
+   exit 
+exit
+wr mem

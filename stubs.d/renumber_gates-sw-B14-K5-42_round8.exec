@@ -1,0 +1,4 @@
+conf t
+static-vlan 1959
+exit
+wr mem

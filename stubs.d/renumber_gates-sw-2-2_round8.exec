@@ -1,0 +1,7 @@
+conf t
+static-vlan 1959
+vlan 1959 
+   tagged B19-B20,Trk1 
+   exit 
+exit
+wr mem
