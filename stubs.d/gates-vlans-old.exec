@@ -28,6 +28,11 @@ no vlan 89
 no vlan 90
 no vlan 92
 no vlan 98
+no vlan 820
+no vlan 888
+no vlan 892
+no vlan 905
+no vlan 980
 no vlan 132
 no vlan 364
 no vlan 365
