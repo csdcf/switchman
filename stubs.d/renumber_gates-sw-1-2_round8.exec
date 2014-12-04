@@ -1,7 +1,0 @@
-conf t
-static-vlan 1959
-vlan 1959 
-   tagged B18-B20,C24,Trk1 
-   exit 
-exit
-wr mem
